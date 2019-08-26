@@ -1,4 +1,4 @@
-package com.example.twitterpresidents
+package com.example.twitterpresidents.adapter
 
 import android.view.View
 import android.view.ViewGroup
