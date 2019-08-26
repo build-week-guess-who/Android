@@ -1,4 +1,4 @@
-package com.example.twitterpresidents
+package com.example.twitterpresidents.model
 
 import java.io.Serializable
 
