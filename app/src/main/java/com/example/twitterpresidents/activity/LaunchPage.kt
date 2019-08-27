@@ -16,6 +16,11 @@ class LaunchPage : AppCompatActivity() {
             val goToLogin = Intent(this, LoginActivity::class.java)
             goToLogin.putExtra("LOGIN_INTENT_CODE", 1)
             startActivity(goToLogin)
-        }
+
+
     }
-}
+        button_chose_to_sign_in.setOnClickListener{
+            val goToSignIn = Intent(this, signIn::class.java)
+            startActivity(goToSignIn)
+        }
+}}
