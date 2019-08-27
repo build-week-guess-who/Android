@@ -2,4 +2,4 @@ package com.example.twitterpresidents.model
 
 import java.io.Serializable
 
-class PresidentialCandidate(portrait : Int, name : String, twitterHandle : String) : Serializable
+class PresidentialCandidate(val portraitId : Int, val name : String, val twitterHandle : String) : Serializable
