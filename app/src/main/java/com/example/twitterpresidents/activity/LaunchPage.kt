@@ -13,7 +13,7 @@ class LaunchPage : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         button_chose_to_login.setOnClickListener{
-            val goToLogin = Intent(this, loginActivity::class.java)
+            val goToLogin = Intent(this, LoginActivity::class.java)
             goToLogin.putExtra("LOGIN_INTENT_CODE", 1)
             startActivity(goToLogin)
     }

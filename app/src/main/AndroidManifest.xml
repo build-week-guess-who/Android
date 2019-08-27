@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.loginActivity"></activity>
+        <activity android:name=".activity.GameplayScreen"></activity>
+        <activity android:name=".activity.InstructionsScreen" />
+        <activity
+            android:name=".activity.ModeSelection"
+            android:label="@string/title_activity_himan"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.LaunchPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

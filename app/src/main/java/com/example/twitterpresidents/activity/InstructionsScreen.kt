@@ -1,12 +1,13 @@
 package com.example.twitterpresidents.activity
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.example.twitterpresidents.R
 
-//user selects a mode, e.g. single player or multiplayer
-class ModeSelection : AppCompatActivity() {
+class InstructionsScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_instructions_screen)
     }
 }
