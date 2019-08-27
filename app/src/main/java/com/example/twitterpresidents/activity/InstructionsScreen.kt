@@ -11,5 +11,9 @@ class InstructionsScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_instructions_screen)
+
+        confirm.setOnClickListener {
+            onBackPressed() //same as just going back
+        }
     }
 }
