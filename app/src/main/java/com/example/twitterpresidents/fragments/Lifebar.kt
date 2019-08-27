@@ -38,7 +38,9 @@ class Lifebar : Fragment() {
     fun reduceLife(){
         //reduces the heart in the lifebar by 1
         currentLives -= 1
-
+        if(currentLives < 0){
+            //launches
+        }
     }
 
     //Gameplay screen must implement this

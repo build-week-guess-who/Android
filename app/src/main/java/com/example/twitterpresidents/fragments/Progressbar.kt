@@ -10,8 +10,6 @@ import android.view.ViewGroup
 
 import com.example.twitterpresidents.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
@@ -45,7 +43,7 @@ class Progressbar : Fragment() {
 
     //extends progress bar to signify when a correct answer has been given.
     fun extendProgressbar(){
-        //call
+
     }
 
     override fun onAttach(context: Context) {

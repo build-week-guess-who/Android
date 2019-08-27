@@ -39,6 +39,7 @@ class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>) 
             if(position == GameplayScreen.correctAnswer){
                 //play sound that signifies its the right answer, update progress bar
                 GameplayScreen.soundPool?.play(R.raw.correct_sound, 1f, 1f, 0, 0, 1f)
+
             } else{
                 //play sound signifying wrong answer
                 GameplayScreen.soundPool?.play(R.raw.wrong_sound, 1f, 1f, 0, 0, 1f)
@@ -46,4 +47,5 @@ class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>) 
             //play transition to the next screen
         }
     }
+
 }
