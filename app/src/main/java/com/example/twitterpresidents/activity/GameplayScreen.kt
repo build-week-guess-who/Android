@@ -12,15 +12,20 @@ import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 
 class GameplayScreen : AppCompatActivity() {
 
-    val presidentialList = mutableListOf<PresidentialCandidate>()
-    val candidateListAdapter = CandidateChoiceListAdapter(presidentialList)
+    companion object {
+        val presidentialList = mutableListOf<PresidentialCandidate>()
+        val candidateListAdapter = CandidateChoiceListAdapter(presidentialList)
+        var correctAnswer : Int = -1 //randomly generates which selection is correct.
+        get(){
+            return (0..3).random()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gameplay_screen)
 
         //setup recyclerview of candidates
-
         candidate_choices.setHasFixedSize(true)
         candidate_choices.adapter = candidateListAdapter
         val manager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -29,6 +34,6 @@ class GameplayScreen : AppCompatActivity() {
         presidentialList.add(PresidentialCandidate(R.drawable.question_mark_outline, "Bernie Sanders", "@feelthebern"))
         presidentialList.add(PresidentialCandidate(R.drawable.question_mark_outline, "Donald Trump", "@realdonaldtrump"))
         presidentialList.add(PresidentialCandidate(R.drawable.question_mark_outline, "Kamala Harris", "@kamalaharris"))
-
+        candidateListAdapter.notifyDataSetChanged()
     }
 }
