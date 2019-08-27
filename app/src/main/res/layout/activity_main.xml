@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.42" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button_sign_in"
         android:layout_width="196dp"
         android:layout_height="37dp"
         android:layout_centerHorizontal="true"
@@ -33,7 +33,7 @@
         android:textColor="#000000"
         android:textSize="25dp"
 
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/button_log_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,18 +41,34 @@
         app:layout_constraintVertical_bias="0.789" />
 
     <Button
-        android:id="@+id/button3"
-        android:textSize="25dp"
-
+        android:id="@+id/button_log_in"
         android:layout_width="196dp"
+
         android:layout_height="37dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="480dp"
         android:background="@drawable/button_with_border"
         android:text="Login"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="148dp"
+
+        android:layout_marginLeft="148dp"
+        android:src='@drawable/twitter_bird'
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.906" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
