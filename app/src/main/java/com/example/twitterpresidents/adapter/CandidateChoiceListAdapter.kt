@@ -15,7 +15,8 @@ class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>) 
 
     class ViewHolder(val view : View) : RecyclerView.ViewHolder(view) {
         val portrait : ImageView = view.candidate_portrait
-        val details : TextView = view.candidate_details
+        val name : TextView = view.candidate_name
+        val twitter_handle : TextView = view.candidate_handle
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,6 +30,7 @@ class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>) 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.portrait.setImageDrawable(ContextCompat.getDrawable(holder.view.context, data[position].portraitId))
-        holder.details.text = data[position].name + "\n" + data[position].twitterHandle
+        holder.name.text = data[position].name
+        holder.twitter_handle.text = data[position].twitterHandle
     }
 }
