@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.twitterpresidents.R
+import com.example.twitterpresidents.activity.GameplayScreen
 import com.example.twitterpresidents.model.PresidentialCandidate
 import kotlinx.android.synthetic.main.candidate_choice.view.*
 
@@ -32,5 +33,16 @@ class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>) 
         holder.portrait.setImageDrawable(ContextCompat.getDrawable(holder.view.context, data[position].portraitId))
         holder.name.text = data[position].name
         holder.twitter_handle.text = data[position].twitterHandle
+
+        //determine if the choice is the correct one.
+        holder.view.setOnClickListener {
+            if(position == GameplayScreen.correctAnswer){
+                //play sound that signifies its the right answer, update progress bar
+
+            } else{
+                //play sound signifying wrong answer
+            }
+            //play transition to the next screen
+        }
     }
 }
