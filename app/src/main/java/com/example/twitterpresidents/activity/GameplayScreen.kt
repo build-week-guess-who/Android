@@ -5,12 +5,15 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.twitterpresidents.R
 import com.example.twitterpresidents.adapter.CandidateChoiceListAdapter
+import com.example.twitterpresidents.fragments.Lifebar
+import com.example.twitterpresidents.fragments.Progressbar
 import com.example.twitterpresidents.model.PresidentialCandidate
 import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 
 //user selects who made the tweet
 
-class GameplayScreen : AppCompatActivity() {
+class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListener,
+    Progressbar.OnFragmentInteractionListener {
 
     companion object {
         val presidentialList = mutableListOf<PresidentialCandidate>()
@@ -35,5 +38,14 @@ class GameplayScreen : AppCompatActivity() {
         presidentialList.add(PresidentialCandidate(R.drawable.question_mark_outline, "Donald Trump", "@realdonaldtrump"))
         presidentialList.add(PresidentialCandidate(R.drawable.question_mark_outline, "Kamala Harris", "@kamalaharris"))
         candidateListAdapter.notifyDataSetChanged()
+    }
+
+    override fun noMoreLives() {
+        //call game over screen...restart game
+
+    }
+
+    override fun progressbarMaximized() {
+        //move to screen where exp is accumulated
     }
 }
