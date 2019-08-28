@@ -3,15 +3,13 @@ package com.example.twitterpresidents.activity
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.media.SoundPool
-import android.net.rtp.AudioStream
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.twitterpresidents.R
 import com.example.twitterpresidents.adapter.CandidateChoiceListAdapter
 import com.example.twitterpresidents.fragments.Lifebar
-import com.example.twitterpresidents.fragments.Progressbar
 import com.example.twitterpresidents.model.PresidentialCandidate
 import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 
@@ -19,12 +17,13 @@ import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 //composed of top portion which includes a lot of ui elements and the tweet in a custom view
 //bottom part is the recycler view of the candidate choices.
 
-class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListener{
+class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListener {
 
     val presidentialList = mutableListOf<PresidentialCandidate>()
     val candidateListAdapter = CandidateChoiceListAdapter(presidentialList)
 
     companion object {
+
         var correctAnswer : Int = -1 //randomly generates which selection is correct.
         get(){
             return (0..3).random()
