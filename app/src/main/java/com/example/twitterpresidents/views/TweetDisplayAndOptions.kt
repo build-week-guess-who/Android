@@ -15,6 +15,10 @@ import com.example.twitterpresidents.fragments.Progressbar
 class TweetDisplayAndOptions(context : Context, attrs : AttributeSet) : View(context, attrs),
     Lifebar.OnFragmentInteractionListener, Progressbar.OnFragmentInteractionListener {
 
+    init{
+
+    }
+
     override fun noMoreLives() {
         //launches dialog fragment that asks whether you want to replay or not
         val fragment = GameOverScreen()
