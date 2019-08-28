@@ -1,5 +1,6 @@
 package com.example.twitterpresidents.activity
 
+import android.content.Intent
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.media.SoundPool
@@ -23,7 +24,7 @@ import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListener, Progressbar.OnFragmentInteractionListener {
 
     val presidentialList = mutableListOf<PresidentialCandidate>()
-    val candidateListAdapter = CandidateChoiceListAdapter(presidentialList)
+    lateinit var candidateListAdapter : CandidateChoiceListAdapter
 
     companion object {
         var correctAnswer : Int = -1 //randomly generates which selection is correct.
@@ -40,6 +41,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         setContentView(R.layout.activity_gameplay_screen)
 
         //setup recyclerview of candidates
+        candidateListAdapter = CandidateChoiceListAdapter(presidentialList, this)
         candidate_choices.setHasFixedSize(true)
         candidate_choices.adapter = candidateListAdapter
         val manager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -77,6 +79,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
     }
 
     override fun progressbarMaximized() {
-
+        val intent = Intent(this, ModeSelection::class.java)
+        startActivity(intent)
     }
 }

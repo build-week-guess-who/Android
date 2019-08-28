@@ -1,19 +1,25 @@
 package com.example.twitterpresidents.adapter
 
+import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.twitterpresidents.R
 import com.example.twitterpresidents.activity.GameplayScreen
+import com.example.twitterpresidents.fragments.Progressbar
 import com.example.twitterpresidents.model.PresidentialCandidate
+import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 import kotlinx.android.synthetic.main.candidate_choice.view.*
 
-class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>) : RecyclerView.Adapter<CandidateChoiceListAdapter.ViewHolder>() {
+class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>, val context: Context) : RecyclerView.Adapter<CandidateChoiceListAdapter.ViewHolder>() {
 
     class ViewHolder(val view : View) : RecyclerView.ViewHolder(view) {
         val portrait : ImageView = view.candidate_portrait
@@ -37,14 +43,19 @@ class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>) 
 
         //determine if the choice is the correct one.
         holder.view.setOnClickListener {
-            Log.i("EWRWER", "WEEW")
             if(position == GameplayScreen.correctAnswer){
                 //play sound that signifies its the right answer, update progress bar
                 GameplayScreen.soundPool?.play(R.raw.correct_sound, 1f, 1f, 0, 0, 1f)
 
+                val progressBar = (context as FragmentActivity).supportFragmentManager.findFragmentById(R.id.frag3) as Progressbar
+                progressBar.extendProgressbar()
+
             } else{
                 //play sound signifying wrong answer
                 GameplayScreen.soundPool?.play(R.raw.wrong_sound, 1f, 1f, 0, 0, 1f)
+
+                val progressBar = (context as FragmentActivity).supportFragmentManager.findFragmentById(R.id.frag3) as Progressbar
+                progressBar.extendProgressbar()
             }
             //play transition to the next screen
         }
