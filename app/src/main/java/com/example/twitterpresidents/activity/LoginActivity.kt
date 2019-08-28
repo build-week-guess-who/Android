@@ -11,9 +11,14 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        button_login.text = intent.getStringExtra("LOGIN_INTENT_CODE")
+
         button_login.setOnClickListener{
-            val goToMode = Intent(this, ModeSelection::class.java)
-            startActivity(goToMode)
+            if(editText.text.toString() != "" && editText2.text.toString() != "") {
+                val goToMode = Intent(this, ModeSelection::class.java)
+                startActivity(goToMode)
+            }
         }
     }
 }

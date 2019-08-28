@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
 import androidx.fragment.app.FragmentActivity
 
 import com.example.twitterpresidents.R
@@ -16,25 +18,10 @@ import kotlinx.android.synthetic.main.fragment_tweet_options_bar.*
 
 //includes the ? that launches the instruction, a non clickable guest ui button, end game button, lifebar
 class TweetOptionsBar : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-    private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        instructions_launcher.setOnClickListener {
-            val intent = Intent(activity as Context, InstructionsScreen::class.java)
-            startActivity(intent)
-        }
-
-        end_game.setOnClickListener {
-            val fragment = Endgame()
-            val fragmentActivity = context as FragmentActivity
-            val fragManager = fragmentActivity.supportFragmentManager
-            fragment.show(fragManager, "frag_key")
-        }
     }
 
     override fun onCreateView(
@@ -42,30 +29,25 @@ class TweetOptionsBar : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tweet_options_bar, container, false)
-    }
+        val view =  inflater.inflate(R.layout.fragment_tweet_options_bar, container, false)
 
-    // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
-        listener?.onFragmentInteraction(uri)
-    }
+        val instructions_btn = view.findViewById<ImageView>(R.id.instructions_launcher)
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
-            listener = context
-        } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+        instructions_btn.setOnClickListener {
+            val intent = Intent(activity as Context, InstructionsScreen::class.java)
+            startActivity(intent)
         }
+
+        val end_game_btn = view.findViewById<Button>(R.id.end_game)
+
+        end_game_btn.setOnClickListener {
+            val fragment = Endgame()
+            val fragmentActivity = context as FragmentActivity
+            val fragManager = fragmentActivity.supportFragmentManager
+            fragment.show(fragManager, "frag_key")
+        }
+
+        return view
     }
 
-    override fun onDetach() {
-        super.onDetach()
-        listener = null
-    }
-
-    interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
-    }
 }

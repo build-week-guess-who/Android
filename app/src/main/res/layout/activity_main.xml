@@ -26,6 +26,7 @@
         android:layout_width="196dp"
         android:layout_height="37dp"
         android:layout_centerHorizontal="true"
+        android:onClick="sendToLogin"
         android:layout_centerVertical="true"
         android:background="@drawable/button_with_border"
         android:shape="ring"
@@ -43,7 +44,6 @@
     <Button
         android:id="@+id/button_chose_to_login"
         android:layout_width="196dp"
-
         android:layout_height="37dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
@@ -51,6 +51,7 @@
         android:background="@drawable/button_with_border"
         android:text="Login"
         android:textSize="25dp"
+        android:onClick="sendToLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +61,6 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="148dp"
-
         android:layout_marginLeft="148dp"
         android:src='@drawable/twitter_bird'
         app:layout_constraintBottom_toTopOf="@+id/textView"

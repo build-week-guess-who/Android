@@ -19,11 +19,12 @@ import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 //composed of top portion which includes a lot of ui elements and the tweet in a custom view
 //bottom part is the recycler view of the candidate choices.
 
-class GameplayScreen : AppCompatActivity(){
+class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListener{
+
+    val presidentialList = mutableListOf<PresidentialCandidate>()
+    val candidateListAdapter = CandidateChoiceListAdapter(presidentialList)
 
     companion object {
-        val presidentialList = mutableListOf<PresidentialCandidate>()
-        val candidateListAdapter = CandidateChoiceListAdapter(presidentialList)
         var correctAnswer : Int = -1 //randomly generates which selection is correct.
         get(){
             return (0..3).random()
@@ -65,5 +66,9 @@ class GameplayScreen : AppCompatActivity(){
 
         correctSound = soundPool?.load(this, R.raw.correct_sound, 1)
         wrongSound = soundPool?.load(this, R.raw.wrong_sound, 1)
+    }
+
+    override fun noMoreLives() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

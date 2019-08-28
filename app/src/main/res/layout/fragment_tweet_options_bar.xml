@@ -8,6 +8,7 @@
     tools:context=".fragments.TweetDisplay">
 
     <fragment
+        android:id="@+id/life_bar"
         android:name="com.example.twitterpresidents.fragments.Lifebar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,8 +52,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_with_border"
         android:enabled="false"
-        android:paddingTop="0dp"
-        android:paddingBottom="0dp"
         android:text="@string/guest"
         android:textColor="#ffffff"
         android:textSize="14sp"
