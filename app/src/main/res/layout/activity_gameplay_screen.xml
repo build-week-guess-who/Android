@@ -14,8 +14,14 @@
         android:layout_height="wrap_content"/>
 
     <fragment
-        android:id="@+id/frag23"
+        android:id="@+id/frag2"
         android:name="com.example.twitterpresidents.fragments.TweetDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <fragment
+        android:id="@+id/frag3"
+        android:name="com.example.twitterpresidents.fragments.Progressbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
