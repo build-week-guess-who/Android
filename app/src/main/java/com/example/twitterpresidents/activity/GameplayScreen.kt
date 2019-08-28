@@ -23,7 +23,6 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
     val candidateListAdapter = CandidateChoiceListAdapter(presidentialList)
 
     companion object {
-
         var correctAnswer : Int = -1 //randomly generates which selection is correct.
         get(){
             return (0..3).random()
