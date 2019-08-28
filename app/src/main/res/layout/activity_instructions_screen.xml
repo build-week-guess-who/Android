@@ -21,8 +21,8 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_constraintTop_toTopOf ="id/how_to_play_rectangle"
-        android:layout_constraintStart_toStartOf ="id/how_to_play_rectangle"
+        app:layout_constraintTop_toTopOf ="id/how_to_play_rectangle"
+        app:layout_constraintStart_toStartOf ="id/how_to_play_rectangle"
         android:src="@drawable/howtoplay"
         tools:layout_editor_absoluteX="91dp"
         tools:layout_editor_absoluteY="497dp" />
