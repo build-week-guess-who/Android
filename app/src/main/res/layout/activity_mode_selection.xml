@@ -63,6 +63,7 @@
         app:layout_constraintVertical_bias="0.0"></ImageView>
 
     <ImageView
+        android:id="@+id/multiplayer_button"
         android:layout_width="238dp"
         android:layout_height="42dp"
         android:layout_marginStart="62dp"
@@ -72,6 +73,7 @@
         android:layout_marginRight="62dp"
         android:layout_marginBottom="326dp"
         android:src="@drawable/mutliplayer"
+        android:onClick="goToGame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -106,6 +108,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="260dp"
+        android:onClick="goToGame"
         android:src="@drawable/single_player"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

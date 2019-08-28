@@ -40,6 +40,10 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gameplay_screen)
 
+        if(intent.getBooleanExtra("IS_MULTIPLAYER", false)){ //if its multiplayer, add another fragment
+            
+        }
+
         //setup recyclerview of candidates
         candidateListAdapter = CandidateChoiceListAdapter(presidentialList, this)
         candidate_choices.setHasFixedSize(true)

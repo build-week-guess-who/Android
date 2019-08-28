@@ -47,14 +47,14 @@ class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>, 
                 //play sound that signifies its the right answer, update progress bar
                 GameplayScreen.soundPool?.play(R.raw.correct_sound, 1f, 1f, 0, 0, 1f)
 
-                val progressBar = (context as FragmentActivity).supportFragmentManager.findFragmentById(R.id.frag3) as Progressbar
+                val progressBar = (context as FragmentActivity).supportFragmentManager.findFragmentById(R.id.progress_bar) as Progressbar
                 progressBar.extendProgressbar()
 
             } else{
                 //play sound signifying wrong answer
                 GameplayScreen.soundPool?.play(R.raw.wrong_sound, 1f, 1f, 0, 0, 1f)
 
-                val progressBar = (context as FragmentActivity).supportFragmentManager.findFragmentById(R.id.frag3) as Progressbar
+                val progressBar = (context as FragmentActivity).supportFragmentManager.findFragmentById(R.id.progress_bar) as Progressbar
                 progressBar.extendProgressbar()
             }
             //play transition to the next screen
