@@ -6,9 +6,11 @@ import android.media.SoundPool
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.twitterpresidents.R
 import com.example.twitterpresidents.adapter.CandidateChoiceListAdapter
+import com.example.twitterpresidents.fragments.GameOverScreen
 import com.example.twitterpresidents.fragments.Lifebar
 import com.example.twitterpresidents.model.PresidentialCandidate
 import kotlinx.android.synthetic.main.activity_gameplay_screen.*
@@ -67,6 +69,11 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
     }
 
     override fun noMoreLives() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val fragment = GameOverScreen()
+        val fragmentActivity = this as FragmentActivity
+        val fragManager = fragmentActivity.supportFragmentManager
+        fragment.show(fragManager, "frag_key")
     }
+
+
 }
