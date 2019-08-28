@@ -50,6 +50,7 @@
 <!--            app:layout_constraintVertical_bias="0.56" />-->
 
         <Button
+            android:id="@+id/continue_yes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
@@ -63,6 +64,7 @@
             app:layout_constraintVertical_bias="0.917" />
 
         <Button
+            android:id="@+id/continue_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
