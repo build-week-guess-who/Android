@@ -20,4 +20,5 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="gameover">Gameover!</string>
+    <string name="continue_game">Continue?</string>
 </resources>
