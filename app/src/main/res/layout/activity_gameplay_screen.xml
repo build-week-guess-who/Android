@@ -8,21 +8,22 @@
     tools:context=".activity.GameplayScreen">
 
     <fragment
-        android:id="@+id/frag1"
+        android:id="@+id/tweet_options_bar"
         android:name="com.example.twitterpresidents.fragments.TweetOptionsBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <fragment
-        android:id="@+id/frag2"
+        android:id="@+id/tweet_display"
         android:name="com.example.twitterpresidents.fragments.TweetDisplay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <fragment
-        android:id="@+id/frag3"
+        android:id="@+id/progress_bar"
         android:name="com.example.twitterpresidents.fragments.Progressbar"
-        android:layout_width="match_parent"
+        android:layout_marginStart = "180dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <FrameLayout

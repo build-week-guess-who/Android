@@ -2,6 +2,7 @@ package com.example.twitterpresidents.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.twitterpresidents.R
 import kotlinx.android.synthetic.main.activity_instructions_screen.*
@@ -13,11 +14,15 @@ class ModeSelection : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mode_selection)
+    }
 
-        //for now simply starts the gameplay screen
-        single_player_button.setOnClickListener {
-            val intent = Intent(this, GameplayScreen::class.java)
-            startActivity(intent)
+    fun goToGame(view: View){
+        val intent = Intent(this, GameplayScreen::class.java)
+        if(view.id == R.id.multiplayer_button) {
+            intent.putExtra("IS_MULTIPLAYER", true)
+        } else{
+            intent.putExtra("IS_MULTIPLAYER", false)
         }
+        startActivity(intent)
     }
 }
