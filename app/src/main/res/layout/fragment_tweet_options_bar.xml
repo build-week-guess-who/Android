@@ -25,10 +25,10 @@
         android:src="@drawable/question_mark_outline"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/end_game"
@@ -37,7 +37,7 @@
         android:background="@drawable/button_with_border"
         android:text="@string/end_game"
         android:textColor="#ffffff"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.897"
@@ -50,15 +50,17 @@
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_with_border"
-        android:text="@string/guest"
-        android:textSize="14sp"
-        android:textColor="#ffffff"
         android:enabled="false"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="@string/guest"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.427"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.365" />
+        app:layout_constraintVertical_bias="0.576" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,21 +1,19 @@
 package com.example.twitterpresidents.fragments
 
 import android.content.Context
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.DialogFragment
 
 import com.example.twitterpresidents.R
-import com.example.twitterpresidents.activity.InstructionsScreen
-import kotlinx.android.synthetic.main.fragment_tweet_options_bar.*
 
-//includes the ? that launches the instruction, a non clickable guest ui button, end game button, lifebar
-class TweetOptionsBar : Fragment() {
+
+//Endgame dialog fragment popup that asks user yes or no whether they'd like to continue with the current game
+class Endgame : DialogFragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -23,18 +21,6 @@ class TweetOptionsBar : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        instructions_launcher.setOnClickListener {
-            val intent = Intent(activity as Context, InstructionsScreen::class.java)
-            startActivity(intent)
-        }
-
-        end_game.setOnClickListener {
-            val fragment = Endgame()
-            val fragmentActivity = context as FragmentActivity
-            val fragManager = fragmentActivity.supportFragmentManager
-            fragment.show(fragManager, "frag_key")
-        }
     }
 
     override fun onCreateView(
@@ -42,7 +28,7 @@ class TweetOptionsBar : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tweet_options_bar, container, false)
+        return inflater.inflate(R.layout.fragment_endgame, container, false)
     }
 
     // TODO: Rename method, update argument and hook method into UI event

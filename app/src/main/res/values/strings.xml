@@ -7,5 +7,14 @@
     <string name="i_got_it">I got it</string>
     <string name="end_game">End game</string>
     <string name="guess_who">Guess Who</string>
+
+
     <string name="guest">Guest</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="password">password</string>
+    <string name="johndoe_gmail_com">JohnDoe@gmail.com</string>
+    <string name="username">Username</string>
+    <string name="twitter_bird">Twitter Bird</string>
+    <string name="filler_text">Filler text</string>
+    <string name="level_1">Level 1</string>
 </resources>
