@@ -19,17 +19,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <fragment
+    <FrameLayout
+        android:id="@+id/container_for_multiplayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <fragment
         android:id="@+id/progress_bar"
         android:name="com.example.twitterpresidents.fragments.Progressbar"
         android:layout_marginStart = "180dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <FrameLayout
-        android:id="@+id/container_for_multiplayer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/candidate_choices"
