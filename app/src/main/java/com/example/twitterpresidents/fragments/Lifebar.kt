@@ -2,6 +2,8 @@ package com.example.twitterpresidents.fragments
 
 import android.app.Activity
 import android.content.Context
+import android.graphics.drawable.Animatable
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -9,8 +11,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.core.content.ContextCompat
 
 import com.example.twitterpresidents.R
+import kotlinx.android.synthetic.main.fragment_lifebar.*
 import java.lang.ClassCastException
 
 private const val NUM_LIVES = 3
@@ -37,10 +42,28 @@ class Lifebar : Fragment() {
 
     fun reduceLife(){
         //reduces the heart in the lifebar by 1
+        when(currentLives){
+            3 ->{
+                playHeartAnimation(heart_three as ImageView)
+            }
+            2 ->{
+                playHeartAnimation(heart_two as ImageView)
+            }
+            1 ->{
+                playHeartAnimation(heart_one as ImageView)
+            }
+        }
         currentLives -= 1
         if(currentLives < 0){
-            //launches
+            //launches game over screen
+
         }
+    }
+
+    fun playHeartAnimation(img_view: ImageView){
+        val avd = ContextCompat.getDrawable(activity as Context, R.drawable.heart_losing_life)
+        img_view.setImageDrawable(avd)
+        (avd as Animatable).start()
     }
 
     //Gameplay screen must implement this
