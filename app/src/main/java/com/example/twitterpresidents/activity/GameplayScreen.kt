@@ -27,6 +27,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
 
     val presidentialList = mutableListOf<PresidentialCandidate>()
     lateinit var candidateListAdapter : CandidateChoiceListAdapter
+    lateinit var playerProgressFragment : MultiplayerFragment
 
     companion object {
         var correctAnswer : Int = -1 //randomly generates which selection is correct.
@@ -36,23 +37,23 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         var correctSound : Int? = null
         var wrongSound : Int? = null
         var soundPool : SoundPool? = null
+        var isMultiplayer : Boolean? = null
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gameplay_screen)
 
-        var fragment : Fragment? = null
+        isMultiplayer = intent.getBooleanExtra("IS_MULTIPLAYER", false)
 
-        if(intent.getBooleanExtra("IS_MULTIPLAYER", false)){ //if its multiplayer, add another fragment
-            fragment = MultiplayerFragment()
-        } else{
-            fragment = Progressbar()
+        isMultiplayer?.let {
+            if(it){ //if its multiplayer, add another fragment
+                playerProgressFragment = MultiplayerFragment()
+                val fragmentTransaction = supportFragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.container_for_fragments, playerProgressFragment)
+                fragmentTransaction.commit()
+            }
         }
-
-        val fragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.container_for_fragments, fragment)
-        fragmentTransaction.commit()
 
         //setup recyclerview of candidates
         candidateListAdapter = CandidateChoiceListAdapter(presidentialList, this)
