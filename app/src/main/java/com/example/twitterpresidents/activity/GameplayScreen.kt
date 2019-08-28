@@ -12,6 +12,7 @@ import com.example.twitterpresidents.R
 import com.example.twitterpresidents.adapter.CandidateChoiceListAdapter
 import com.example.twitterpresidents.fragments.GameOverScreen
 import com.example.twitterpresidents.fragments.Lifebar
+import com.example.twitterpresidents.fragments.Progressbar
 import com.example.twitterpresidents.model.PresidentialCandidate
 import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 
@@ -19,7 +20,7 @@ import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 //composed of top portion which includes a lot of ui elements and the tweet in a custom view
 //bottom part is the recycler view of the candidate choices.
 
-class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListener {
+class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListener, Progressbar.OnFragmentInteractionListener {
 
     val presidentialList = mutableListOf<PresidentialCandidate>()
     val candidateListAdapter = CandidateChoiceListAdapter(presidentialList)
@@ -75,5 +76,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         fragment.show(fragManager, "frag_key")
     }
 
+    override fun progressbarMaximized() {
 
+    }
 }
