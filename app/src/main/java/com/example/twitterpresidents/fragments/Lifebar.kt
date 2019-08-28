@@ -25,7 +25,7 @@ private const val NUM_LIVES = 3
 class Lifebar : Fragment() {
 
     var currentLives = 3 //gets reduced when lives we get wrong answer
-    private var listener: OnFragmentInteractionListener? = null
+    var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +56,7 @@ class Lifebar : Fragment() {
         currentLives -= 1
         if(currentLives < 0){
             //launches game over screen
-
+            listener?.noMoreLives()
         }
     }
 
