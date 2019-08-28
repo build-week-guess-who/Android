@@ -1,15 +1,19 @@
 package com.example.twitterpresidents.activity
 
+import android.content.Intent
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.media.SoundPool
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.twitterpresidents.R
 import com.example.twitterpresidents.adapter.CandidateChoiceListAdapter
+import com.example.twitterpresidents.fragments.GameOverScreen
 import com.example.twitterpresidents.fragments.Lifebar
+import com.example.twitterpresidents.fragments.Progressbar
 import com.example.twitterpresidents.model.PresidentialCandidate
 import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 
@@ -17,10 +21,10 @@ import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 //composed of top portion which includes a lot of ui elements and the tweet in a custom view
 //bottom part is the recycler view of the candidate choices.
 
-class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListener {
+class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListener, Progressbar.OnFragmentInteractionListener {
 
     val presidentialList = mutableListOf<PresidentialCandidate>()
-    val candidateListAdapter = CandidateChoiceListAdapter(presidentialList)
+    lateinit var candidateListAdapter : CandidateChoiceListAdapter
 
     companion object {
         var correctAnswer : Int = -1 //randomly generates which selection is correct.
@@ -37,6 +41,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         setContentView(R.layout.activity_gameplay_screen)
 
         //setup recyclerview of candidates
+        candidateListAdapter = CandidateChoiceListAdapter(presidentialList, this)
         candidate_choices.setHasFixedSize(true)
         candidate_choices.adapter = candidateListAdapter
         val manager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -67,6 +72,14 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
     }
 
     override fun noMoreLives() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val fragment = GameOverScreen()
+        val fragmentActivity = this as FragmentActivity
+        val fragManager = fragmentActivity.supportFragmentManager
+        fragment.show(fragManager, "frag_key")
+    }
+
+    override fun progressbarMaximized() {
+        val intent = Intent(this, ModeSelection::class.java)
+        startActivity(intent)
     }
 }
