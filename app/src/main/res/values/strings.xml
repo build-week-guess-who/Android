@@ -17,4 +17,7 @@
     <string name="twitter_bird">Twitter Bird</string>
     <string name="filler_text">Filler text</string>
     <string name="level_1">Level 1</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="gameover">Gameover!</string>
 </resources>
