@@ -1,5 +1,6 @@
 package com.example.twitterpresidents.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,6 +37,7 @@ class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>) 
 
         //determine if the choice is the correct one.
         holder.view.setOnClickListener {
+            Log.i("EWRWER", "WEEW")
             if(position == GameplayScreen.correctAnswer){
                 //play sound that signifies its the right answer, update progress bar
                 GameplayScreen.soundPool?.play(R.raw.correct_sound, 1f, 1f, 0, 0, 1f)

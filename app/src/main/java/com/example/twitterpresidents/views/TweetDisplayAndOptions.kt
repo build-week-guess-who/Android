@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.AttributeSet
 import android.view.View
+import android.widget.LinearLayout
 import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.FragmentActivity
 import com.example.twitterpresidents.activity.ExperienceScreen
@@ -12,12 +13,12 @@ import com.example.twitterpresidents.fragments.GameOverScreen
 import com.example.twitterpresidents.fragments.Lifebar
 import com.example.twitterpresidents.fragments.Progressbar
 
-class TweetDisplayAndOptions(context : Context, attrs : AttributeSet) : View(context, attrs),
-    Lifebar.OnFragmentInteractionListener, Progressbar.OnFragmentInteractionListener {
+class TweetDisplayAndOptions(context : Context, attrs : AttributeSet) : LinearLayout(context, attrs),
+    Lifebar.OnFragmentInteractionListener, Progressbar.OnFragmentInteractionListener{
 
-    init{
-
-    }
+//    init{
+//
+//    }
 
     override fun noMoreLives() {
         //launches dialog fragment that asks whether you want to replay or not
