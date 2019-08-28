@@ -6,17 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".activity.InstructionsScreen">
 
-    <Button
-        android:id="@+id/confirm"
+    <ImageView
+        android:layout_width="463dp"
+        android:layout_height="173dp"
+        android:layout_marginTop="480dp"
+        android:src="@drawable/howtoplayrectangle"
+        android:id ="@+id/how_to_play_rectangle"
+        app:layout_constraintBottom_toTopOf="@+id/confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_constraintTop_toTopOf ="id/how_to_play_rectangle"
+        android:layout_constraintStart_toStartOf ="id/how_to_play_rectangle"
+        android:src="@drawable/howtoplay"
+        tools:layout_editor_absoluteX="91dp"
+        tools:layout_editor_absoluteY="497dp" />
+
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="204dp"
+        android:layout_height="62dp"
         android:background="@drawable/button_with_border"
         android:text="@string/i_got_it"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.651" />
+        app:layout_constraintVertical_bias="0.976" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
