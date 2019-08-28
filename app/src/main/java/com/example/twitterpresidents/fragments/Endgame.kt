@@ -11,7 +11,6 @@ import androidx.fragment.app.DialogFragment
 
 import com.example.twitterpresidents.R
 
-
 //Endgame dialog fragment popup that asks user yes or no whether they'd like to continue with the current game
 class Endgame : DialogFragment() {
     // TODO: Rename and change types of parameters

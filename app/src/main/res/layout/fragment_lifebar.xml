@@ -9,19 +9,19 @@
 
     <ImageView
         android:id="@+id/heart_one"
-        android:src="@drawable/heart_outline"
+        android:src="@drawable/heart_losing_life"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <ImageView
         android:id="@+id/heart_two"
-        android:src="@drawable/heart_outline"
+        android:src="@drawable/heart_losing_life"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <ImageView
         android:id="@+id/heart_three"
-        android:src="@drawable/heart_outline"
+        android:src="@drawable/heart_losing_life"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
