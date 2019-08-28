@@ -19,11 +19,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <FrameLayout
-        android:id="@+id/container_multiplayer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/candidate_choices"
         android:layout_width="match_parent"
