@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.InstructionsScreen">
-
+//TEST COMMIT
     <ImageView
         android:id="@+id/how_to_play_rectangle"
         android:layout_width="463dp"
@@ -22,6 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:layout_marginLeft = "4dp"
         android:layout_marginTop="28dp"
         android:src="@drawable/howtoplay"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
