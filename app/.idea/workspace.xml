@@ -11,20 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9da0f41d-678e-43aa-8e68-c98ee697ae2a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/fragments/MultiplayerFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_multiplayer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/GameplayScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/GameplayScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/ModeSelection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/ModeSelection.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/adapter/CandidateChoiceListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/adapter/CandidateChoiceListAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_gameplay_screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_gameplay_screen.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_mode_selection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_mode_selection.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_progressbar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_progressbar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_tweet_display.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_tweet_display.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,21 +40,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/GameplayScreen.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="389">
+              <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_gameplay_screen.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="23" column="45" lean-forward="true" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+            <state relative-caret-position="415">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/adapter/CandidateChoiceListAdapter.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="41" column="24" lean-forward="true" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -73,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_multiplayer.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="-503">
               <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
             </state>
           </provider>
@@ -108,19 +107,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/adapter/CandidateChoiceListAdapter.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/fragments/MultiplayerFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#49#295#0" expanded="true" />
               </folding>
@@ -147,13 +137,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/fragments/Progressbar.kt" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_tweet_display.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_mode_selection.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/GameplayScreen.kt" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/fragments/MultiplayerFragment.kt" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_multiplayer.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_progressbar.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/ModeSelection.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/adapter/CandidateChoiceListAdapter.kt" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_gameplay_screen.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/GameplayScreen.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/adapter/CandidateChoiceListAdapter.kt" />
       </list>
     </option>
   </component>
@@ -428,7 +418,21 @@
       <option name="project" value="LOCAL" />
       <updated>1567023451443</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="starting multiplayer activity">
+      <created>1567028439797</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1567028439797</updated>
+    </task>
+    <task id="LOCAL-00012" summary="working on multiplayer activity">
+      <created>1567028938661</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1567028938661</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -449,7 +453,7 @@
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50067115" side_tool="true" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Build" order="5" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Build" order="5" weight="0.3286119" />
       <window_info anchor="bottom" id="Android Profiler" order="6" />
       <window_info anchor="bottom" id="Debug" order="7" />
       <window_info anchor="bottom" id="Run" order="8" weight="0.3286119" />
@@ -491,7 +495,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="d" />
-    <option name="LAST_COMMIT_MESSAGE" value="d" />
+    <MESSAGE value="starting multiplayer activity" />
+    <MESSAGE value="working on multiplayer activity" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on multiplayer activity" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="editorHistoryManager">
@@ -674,10 +680,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/adapter/CandidateChoiceListAdapter.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/ModeSelection.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+        <state relative-caret-position="153">
+          <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/fragments/MultiplayerFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#49#295#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_multiplayer.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-503">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -689,43 +713,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_multiplayer.xml">
-      <provider editor-type-id="android-designer2" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/adapter/CandidateChoiceListAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/ModeSelection.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/fragments/MultiplayerFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#49#295#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/GameplayScreen.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="408">
+          <caret line="41" column="24" lean-forward="true" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_gameplay_screen.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="23" column="45" lean-forward="true" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+        <state relative-caret-position="415">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/GameplayScreen.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
         </state>
       </provider>
     </entry>

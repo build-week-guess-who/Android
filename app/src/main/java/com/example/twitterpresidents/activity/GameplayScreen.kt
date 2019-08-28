@@ -7,12 +7,14 @@ import android.media.SoundPool
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.twitterpresidents.R
 import com.example.twitterpresidents.adapter.CandidateChoiceListAdapter
 import com.example.twitterpresidents.fragments.GameOverScreen
 import com.example.twitterpresidents.fragments.Lifebar
+import com.example.twitterpresidents.fragments.MultiplayerFragment
 import com.example.twitterpresidents.fragments.Progressbar
 import com.example.twitterpresidents.model.PresidentialCandidate
 import kotlinx.android.synthetic.main.activity_gameplay_screen.*
@@ -40,9 +42,17 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gameplay_screen)
 
+        var fragment : Fragment? = null
+
         if(intent.getBooleanExtra("IS_MULTIPLAYER", false)){ //if its multiplayer, add another fragment
-            
+            fragment = MultiplayerFragment()
+        } else{
+            fragment = Progressbar()
         }
+
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.container_for_fragments, fragment)
+        fragmentTransaction.commit()
 
         //setup recyclerview of candidates
         candidateListAdapter = CandidateChoiceListAdapter(presidentialList, this)
