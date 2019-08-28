@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_with_border"
         android:text="@string/level_1"
+        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.574"
