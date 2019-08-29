@@ -42,7 +42,7 @@ class Progressbar : Fragment() {
     //extends progress bar to signify when a correct answer has been given.
     fun extendProgressbar(){
         progress += 1
-        progress_text.text = "Progress " + progress.toString()
+        //progress_text.text = "Progress " + progress.toString()
     }
 
     override fun onAttach(context: Context) {
