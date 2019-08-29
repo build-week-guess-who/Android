@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.VictoryScreen"></activity>
-        <activity android:name=".activity.ExperienceScreen" />
         <activity android:name=".activity.GameplayScreen" />
         <activity android:name=".activity.InstructionsScreen" />
         <activity android:name=".activity.ModeSelection" />
