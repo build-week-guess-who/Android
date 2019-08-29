@@ -6,6 +6,7 @@ import android.media.AudioManager
 import android.media.SoundPool
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -87,10 +88,10 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
     }
 
     override fun noMoreLives() {
+        Log.i("WEWLKJE0", "KJWHE")
         val fragment = GameOverScreen()
-        val fragmentActivity = this as FragmentActivity
-        val fragManager = fragmentActivity.supportFragmentManager
-        fragment.show(fragManager, "frag_key")
+        val fragManager = this.supportFragmentManager
+        fragment.show(fragManager, "frag_k")
     }
 
     override fun progressbarMaximized() {

@@ -43,6 +43,9 @@ class Progressbar : Fragment() {
     fun extendProgressbar(){
         progress += 1
         progress_text.text = "Progress " + progress.toString()
+        if(progress == 5){
+            listener?.progressbarMaximized()
+        }
     }
 
     override fun onAttach(context: Context) {
