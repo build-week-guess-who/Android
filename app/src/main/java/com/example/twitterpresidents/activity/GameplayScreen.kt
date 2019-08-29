@@ -15,6 +15,7 @@ import com.example.twitterpresidents.R
 import com.example.twitterpresidents.adapter.CandidateChoiceListAdapter
 import com.example.twitterpresidents.fragments.*
 import com.example.twitterpresidents.model.PresidentialCandidate
+import com.example.twitterpresidents.util.PresidentialCandidatesData
 import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 
 //user selects who made the tweet.
@@ -23,7 +24,7 @@ import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 
 class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListener, Progressbar.OnFragmentInteractionListener {
 
-    val presidentialList = mutableListOf<PresidentialCandidate>()
+//    val presidentialList = mutableListOf<PresidentialCandidate>()
     lateinit var candidateListAdapter : CandidateChoiceListAdapter
     lateinit var playerProgressFragment : MultiplayerFragment
 
@@ -75,18 +76,19 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         }
 
         //setup recyclerview of candidates
-        candidateListAdapter = CandidateChoiceListAdapter(presidentialList, this, soundPool.load(this, R.raw.correct_sound, 1),
-        soundPool.load(this, R.raw.wrong_sound, 1))
+        candidateListAdapter = CandidateChoiceListAdapter(PresidentialCandidatesData.presidentialCandidates,
+                this, soundPool.load(this, R.raw.correct_sound, 1),
+                soundPool.load(this, R.raw.wrong_sound, 1))
 
         candidate_choices.setHasFixedSize(true)
         candidate_choices.adapter = candidateListAdapter
         val manager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         candidate_choices.layoutManager = manager
 
-        presidentialList.add(PresidentialCandidate(R.drawable.question_mark_outline, "Bernie Sanders", "@feelthebern"))
-        presidentialList.add(PresidentialCandidate(R.drawable.question_mark_outline, "Donald Trump", "@realdonaldtrump"))
-        presidentialList.add(PresidentialCandidate(R.drawable.question_mark_outline, "Kamala Harris", "@kamalaharris"))
-        candidateListAdapter.notifyDataSetChanged()
+//        presidentialList.add(PresidentialCandidate(R.drawable.question_mark_outline, "Bernie Sanders", "@feelthebern"))
+//        presidentialList.add(PresidentialCandidate(R.drawable.question_mark_outline, "Donald Trump", "@realdonaldtrump"))
+//        presidentialList.add(PresidentialCandidate(R.drawable.question_mark_outline, "Kamala Harris", "@kamalaharris"))
+//        candidateListAdapter.notifyDataSetChanged()
 
     }
 

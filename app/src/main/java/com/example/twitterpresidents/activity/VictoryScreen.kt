@@ -29,7 +29,6 @@ class VictoryScreen : AppCompatActivity() {
         setContentView(R.layout.activity_victory_screen)
         val drawableIDs = listOf( R.drawable.you_win_animated)
         var pointer = 0
-
     }
 }
 
