@@ -53,8 +53,8 @@ class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>, 
 
                 val toolbar = (context as FragmentActivity)
                         .supportFragmentManager.findFragmentById(R.id.tweet_options_bar) as TweetOptionsBar
-                val lifeBar = toolbar.childFragmentManager.findFragmentById(R.id.life_bar) as Lifebar
-                lifeBar.reduceLife()
+                //val lifeBar = toolbar.childFragmentManager.findFragmentById(R.id.life_bar) as Lifebar
+                //lifeBar.reduceLife()
 
                 GameplayScreen.isMultiplayer?.let{
                     if(it){
@@ -73,8 +73,8 @@ class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>, 
 
                 val toolbar = (context as FragmentActivity)
                         .supportFragmentManager.findFragmentById(R.id.tweet_options_bar) as TweetOptionsBar
-                val lifeBar = toolbar.childFragmentManager.findFragmentById(R.id.life_bar) as Lifebar
-                lifeBar.reduceLife()
+                //val lifeBar = toolbar.childFragmentManager.findFragmentById(R.id.life_bar) as Lifebar
+                //lifeBar.reduceLife()
 
                 GameplayScreen.isMultiplayer?.let{
                     if(it){

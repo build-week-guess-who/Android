@@ -13,6 +13,7 @@ import androidx.fragment.app.DialogFragment
 import com.example.twitterpresidents.R
 import com.example.twitterpresidents.activity.ModeSelection
 import kotlinx.android.synthetic.main.fragment_game_over_screen.*
+import kotlinx.android.synthetic.main.fragment_game_over_screen.view.*
 
 
 //screen that asks whether the user wants to continue
@@ -29,12 +30,12 @@ class GameOverScreen : DialogFragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_game_over_screen, container, false)
 
-        continue_yes.setOnClickListener {
+        view.continue_yes.setOnClickListener {
             val intent = Intent(activity as Context, ModeSelection::class.java)
             startActivity(intent)
         }
 
-        continue_no.setOnClickListener {
+        view.continue_no.setOnClickListener {
             activity?.finish()
             System.exit(0)
         }
