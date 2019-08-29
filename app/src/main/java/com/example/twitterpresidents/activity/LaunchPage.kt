@@ -13,6 +13,12 @@ class LaunchPage : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        exit_button.setOnClickListener{
+            finish();
+            System.exit(0)
+        }
+
+
     }
 
     fun sendToLogin(view: View) {

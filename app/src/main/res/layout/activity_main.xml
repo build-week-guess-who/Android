@@ -28,11 +28,11 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="@drawable/button_with_border"
+        android:onClick="sendToLogin"
         android:shape="ring"
         android:text="Sign Up"
         android:textColor="#000000"
         android:textSize="25dp"
-        android:onClick="sendToLogin"
         app:layout_constraintBottom_toTopOf="@+id/button_chose_to_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.567"
@@ -48,19 +48,32 @@
         android:layout_centerVertical="true"
         android:layout_marginTop="480dp"
         android:background="@drawable/button_with_border"
+        android:onClick="sendToLogin"
         android:text="Login"
         android:textSize="25dp"
-        android:onClick="sendToLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/exit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/button_with_border"
+        android:text="Exit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
     <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="148dp"
-        android:layout_marginLeft = "149dp"
+        android:layout_marginLeft="149dp"
         android:src='@drawable/twitter_bird'
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"

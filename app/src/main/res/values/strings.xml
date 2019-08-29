@@ -8,7 +8,7 @@
     <string name="end_game">End game</string>
     <string name="guess_who">Guess Who</string>
     <string name="want_to_end_game">Would you like to end the game?</string>
-
+    <string name = "you_win_static_display">You win!</string>
     <string name="guest">Guest</string>
     <string name="sign_up">Sign Up</string>
     <string name="password">password</string>
