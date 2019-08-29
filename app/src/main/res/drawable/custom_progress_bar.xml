@@ -2,7 +2,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 <item android:id='@android:id/background'>
     <shape>
-        <gradient android:startColor = "#44ff00"
+        <gradient android:startColor = "@color/secondaryYellow"
             android:centerColor = "@color/secondaryYellow"
             android:centerY ="1.0"
             android:endColor="@color/primaryPink"

@@ -27,7 +27,8 @@
         android:layout_width="730dp"
         android:layout_height="16dp"
         android:max="5"
-        android:progress="1"
+        android:progress="0"
+
         android:progressDrawable="@drawable/custom_progress_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
