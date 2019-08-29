@@ -32,7 +32,6 @@ class GameOverScreen : DialogFragment() {
         return inflater.inflate(R.layout.fragment_game_over_screen, container, false)
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -43,7 +42,10 @@ class GameOverScreen : DialogFragment() {
 
         view.continue_no.setOnClickListener {
             Log.i("WHY", "EDSKN")
-            activity?.finish()
+            val homeIntent = Intent(Intent.ACTION_MAIN)
+            homeIntent.addCategory(Intent.CATEGORY_HOME)
+            homeIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(homeIntent)
         }
     }
 }

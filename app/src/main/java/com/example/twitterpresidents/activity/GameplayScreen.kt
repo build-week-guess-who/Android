@@ -84,12 +84,6 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         candidate_choices.adapter = candidateListAdapter
         val manager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         candidate_choices.layoutManager = manager
-
-//        presidentialList.add(PresidentialCandidate(R.drawable.question_mark_outline, "Bernie Sanders", "@feelthebern"))
-//        presidentialList.add(PresidentialCandidate(R.drawable.question_mark_outline, "Donald Trump", "@realdonaldtrump"))
-//        presidentialList.add(PresidentialCandidate(R.drawable.question_mark_outline, "Kamala Harris", "@kamalaharris"))
-//        candidateListAdapter.notifyDataSetChanged()
-
     }
 
     override fun noMoreLives() {
