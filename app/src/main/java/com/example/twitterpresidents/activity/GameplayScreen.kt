@@ -7,14 +7,13 @@ import android.media.SoundPool
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.twitterpresidents.R
 import com.example.twitterpresidents.adapter.CandidateChoiceListAdapter
 import com.example.twitterpresidents.fragments.*
-import com.example.twitterpresidents.model.PresidentialCandidate
 import com.example.twitterpresidents.util.PresidentialCandidatesData
 import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 
@@ -76,7 +75,8 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         }
 
         //setup recyclerview of candidates
-        candidateListAdapter = CandidateChoiceListAdapter(PresidentialCandidatesData.presidentialCandidates,
+        val presCandidates = PresidentialCandidatesData()
+        candidateListAdapter = CandidateChoiceListAdapter(presCandidates.presidentialCandidates,
                 this, soundPool.load(this, R.raw.correct_sound, 1),
                 soundPool.load(this, R.raw.wrong_sound, 1))
 
@@ -94,15 +94,20 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
 
     override fun noMoreLives() {
         Log.i("WEWLKJE0", "KJWHE")
-        val fragment = GameOverScreen()
+        val gameOverFragment = GameOverScreen()
         val fragmentActivity = this as FragmentActivity
         val fragManager = fragmentActivity.supportFragmentManager
-        fragment.show(fragManager, "frag_k")
+        gameOverFragment.show(fragManager, "frag_k")
     }
 
     override fun progressbarMaximized() {
         //go to victory screen
         val intent = Intent(this, ModeSelection::class.java)
         startActivity(intent)
+    }
+
+    override fun onBackPressed() {
+//        val end_game_btn = (tweet_options_bar.childFragmentManager.findFragmentById(R.id.end_game)) as Button?
+//        end_game_btn?.performClick()
     }
 }

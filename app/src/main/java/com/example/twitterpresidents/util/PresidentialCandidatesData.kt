@@ -5,10 +5,8 @@ import com.example.twitterpresidents.model.PresidentialCandidate
 
 class PresidentialCandidatesData {
 
-    companion object {
-        lateinit var presidentialCandidates : MutableList<PresidentialCandidate>
-        lateinit var candidateTweets : kotlin.collections.MutableMap<PresidentialCandidate, MutableList<String>>
-    }
+    lateinit var presidentialCandidates : MutableList<PresidentialCandidate>
+    lateinit var candidateTweets : kotlin.collections.MutableMap<PresidentialCandidate, MutableList<String>>
 
     init{
         presidentialCandidates = allCandidateProfiles()
