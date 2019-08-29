@@ -42,8 +42,9 @@ class Endgame : DialogFragment()  {
         }
         button_return_to_game.setOnClickListener{
             val returnToGame = Intent(getActivity(), GameplayScreen::class.java)
-            getActivity()!!.supportFragmentManager.popBackStack()
+            //getActivity()!!.supportFragmentManager.popBackStack()
             //not working fix, placeholder code
+            getDialog().dismiss()
         }
     }
     }
