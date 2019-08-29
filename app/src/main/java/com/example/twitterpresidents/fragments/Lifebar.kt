@@ -29,7 +29,6 @@ class Lifebar : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -54,7 +53,7 @@ class Lifebar : Fragment() {
             }
         }
         currentLives -= 1
-        if(currentLives < 0){
+        if(currentLives <= 0){
             //launches game over screen
             listener?.noMoreLives()
         }
