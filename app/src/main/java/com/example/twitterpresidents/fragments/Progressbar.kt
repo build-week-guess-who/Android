@@ -22,8 +22,7 @@ class Progressbar : Fragment() {
 
 //    var instance : Progressbar? = null
     var listener: OnFragmentInteractionListener? = null
-   // var progress = 0
-  // val progressBar = R.id.progressBar as ProgressBar
+
     interface OnFragmentInteractionListener {
         fun progressbarMaximized()
     }
@@ -60,5 +59,6 @@ class Progressbar : Fragment() {
         } else {
             throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
-    }}
+    }
+}
 
