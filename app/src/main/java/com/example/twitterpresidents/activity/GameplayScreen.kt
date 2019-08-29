@@ -30,14 +30,14 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
     companion object {
         var correctAnswer : Int = -1 //randomly generates which selection is correct.
         get(){
-            val guess = (0..3).random()
+            val guess = (0..2).random()
             Log.i("GUESS: ", "${guess}")
             return guess
         }
 
         var aiResponse : Int = -1 //the AI's guess
         get(){
-            return (0..3).random()
+            return (0..2).random()
         }
 
         lateinit var soundPool : SoundPool
