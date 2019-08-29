@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 
 import com.example.twitterpresidents.R
+import com.example.twitterpresidents.activity.GameplayScreen
 import com.example.twitterpresidents.activity.ModeSelection
 import kotlinx.android.synthetic.main.fragment_endgame.*
 
@@ -37,6 +38,12 @@ class Endgame : DialogFragment()  {
         button_return_to_mode_selection.setOnClickListener{
             val returnToMode = Intent(getActivity(), ModeSelection::class.java)
             startActivity(returnToMode)
+
+        }
+        button_return_to_game.setOnClickListener{
+            val returnToGame = Intent(getActivity(), GameplayScreen::class.java)
+            getActivity()!!.supportFragmentManager.popBackStack()
+            //not working fix, placeholder code
         }
     }
     }
