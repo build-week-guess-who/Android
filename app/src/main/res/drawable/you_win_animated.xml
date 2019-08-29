@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/you_win_one" android:duration="33"/>
+    <item android:drawable="@drawable/you_win_two" android:duration="33"/>
+    <item android:drawable="@drawable/you_win_three" android:duration="33"/>
+
+
+
+</animation-list>
