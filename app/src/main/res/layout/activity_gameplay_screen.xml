@@ -28,9 +28,10 @@
         android:layout_marginLeft="0dp"/>
 
     <FrameLayout
-        android:id="@+id/container_for_multiplayer"
+        android:id="@+id/container_for_fragments"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+    </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/candidate_choices"

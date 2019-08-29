@@ -1,20 +1,21 @@
 package com.example.twitterpresidents.adapter
 
+import android.app.Activity
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.twitterpresidents.R
 import com.example.twitterpresidents.activity.GameplayScreen
+import com.example.twitterpresidents.fragments.Lifebar
+import com.example.twitterpresidents.fragments.MultiplayerFragment
 import com.example.twitterpresidents.fragments.Progressbar
+import com.example.twitterpresidents.fragments.TweetOptionsBar
 import com.example.twitterpresidents.model.PresidentialCandidate
 import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 import kotlinx.android.synthetic.main.candidate_choice.view.*
@@ -50,12 +51,39 @@ class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>, 
                 val progressBar = (context as FragmentActivity).supportFragmentManager.findFragmentById(R.id.progress_bar) as Progressbar
                 progressBar.extendProgressbar()
 
+                val toolbar = (context as FragmentActivity)
+                        .supportFragmentManager.findFragmentById(R.id.tweet_options_bar) as TweetOptionsBar
+                //val lifeBar = toolbar.childFragmentManager.findFragmentById(R.id.life_bar) as Lifebar
+                //lifeBar.reduceLife()
+
+                GameplayScreen.isMultiplayer?.let{
+                    if(it){
+                        val multiplayerProgressUi = (context as FragmentActivity)
+                                .supportFragmentManager.findFragmentById(R.id.container_for_fragments) as MultiplayerFragment
+                        val playerTwoProgressBar = multiplayerProgressUi.childFragmentManager.findFragmentById(R.id.player_two_progressbar) as Progressbar
+                        playerTwoProgressBar.extendProgressbar()
+                    }
+                }
             } else{
                 //play sound signifying wrong answer
                 GameplayScreen.soundPool?.play(R.raw.wrong_sound, 1f, 1f, 0, 0, 1f)
 
                 val progressBar = (context as FragmentActivity).supportFragmentManager.findFragmentById(R.id.progress_bar) as Progressbar
                 progressBar.extendProgressbar()
+
+                val toolbar = (context as FragmentActivity)
+                        .supportFragmentManager.findFragmentById(R.id.tweet_options_bar) as TweetOptionsBar
+                //val lifeBar = toolbar.childFragmentManager.findFragmentById(R.id.life_bar) as Lifebar
+                //lifeBar.reduceLife()
+
+                GameplayScreen.isMultiplayer?.let{
+                    if(it){
+                        val multiplayerProgressUi = (context as FragmentActivity)
+                                .supportFragmentManager.findFragmentById(R.id.container_for_fragments) as MultiplayerFragment
+                        val playerTwoProgressBar = multiplayerProgressUi.childFragmentManager.findFragmentById(R.id.player_two_progressbar) as Progressbar
+                        playerTwoProgressBar.extendProgressbar()
+                    }
+                }
             }
             //play transition to the next screen
         }

@@ -14,6 +14,7 @@ import com.example.twitterpresidents.R
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 import kotlinx.android.synthetic.main.fragment_progressbar.*
+import kotlinx.android.synthetic.main.fragment_progressbar.view.*
 
 //fragment that encapsulates the progress bar
 
@@ -21,8 +22,7 @@ class Progressbar : Fragment() {
 
 //    var instance : Progressbar? = null
     var listener: OnFragmentInteractionListener? = null
-   // var progress = 0
-  // val progressBar = R.id.progressBar as ProgressBar
+
     interface OnFragmentInteractionListener {
         fun progressbarMaximized()
     }
@@ -37,19 +37,20 @@ class Progressbar : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_progressbar, container, false)}
+        val view = inflater.inflate(R.layout.fragment_progressbar, container, false)
+        view.progressBar.progress = 0
+        return view
+    }
 
 
     //extends progress bar to signify when a correct answer has been given.
     fun extendProgressbar(){
-        progressBar.progress = 0
-        progressBar.setOnClickListener{
-            progressBar.progress = (progressBar.progress + 1)
-            //if progress bar is clicked just so, it will animate. 5 total clicks to fill bar once activated.
+        progressBar.progress += 1
+        if(progressBar.progress == 5){
+            listener?.progressbarMaximized()
         }
+        Log.i("Progresssfdas ", "$progressBar.progress")
     }
-
-
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -58,5 +59,6 @@ class Progressbar : Fragment() {
         } else {
             throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
-    }}
+    }
+}
 

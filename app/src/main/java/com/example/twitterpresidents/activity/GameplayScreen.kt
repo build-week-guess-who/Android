@@ -6,13 +6,16 @@ import android.media.AudioManager
 import android.media.SoundPool
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.twitterpresidents.R
 import com.example.twitterpresidents.adapter.CandidateChoiceListAdapter
 import com.example.twitterpresidents.fragments.GameOverScreen
 import com.example.twitterpresidents.fragments.Lifebar
+import com.example.twitterpresidents.fragments.MultiplayerFragment
 import com.example.twitterpresidents.fragments.Progressbar
 import com.example.twitterpresidents.model.PresidentialCandidate
 import kotlinx.android.synthetic.main.activity_gameplay_screen.*
@@ -25,6 +28,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
 
     val presidentialList = mutableListOf<PresidentialCandidate>()
     lateinit var candidateListAdapter : CandidateChoiceListAdapter
+    lateinit var playerProgressFragment : MultiplayerFragment
 
     companion object {
         var correctAnswer : Int = -1 //randomly generates which selection is correct.
@@ -34,14 +38,22 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         var correctSound : Int? = null
         var wrongSound : Int? = null
         var soundPool : SoundPool? = null
+        var isMultiplayer : Boolean? = null
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gameplay_screen)
 
-        if(intent.getBooleanExtra("IS_MULTIPLAYER", false)){ //if its multiplayer, add another fragment
-            
+        isMultiplayer = intent.getBooleanExtra("IS_MULTIPLAYER", false)
+
+        isMultiplayer?.let {
+            if(it){ //if its multiplayer, add another fragment
+                playerProgressFragment = MultiplayerFragment()
+                val fragmentTransaction = supportFragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.container_for_fragments, playerProgressFragment)
+                fragmentTransaction.commit()
+            }
         }
 
         //setup recyclerview of candidates
@@ -76,10 +88,10 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
     }
 
     override fun noMoreLives() {
+        Log.i("WEWLKJE0", "KJWHE")
         val fragment = GameOverScreen()
-        val fragmentActivity = this as FragmentActivity
-        val fragManager = fragmentActivity.supportFragmentManager
-        fragment.show(fragManager, "frag_key")
+        val fragManager = this.supportFragmentManager
+        fragment.show(fragManager, "frag_k")
     }
 
     override fun progressbarMaximized() {
