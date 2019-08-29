@@ -2,6 +2,7 @@ package com.example.twitterpresidents.adapter
 
 import android.app.Activity
 import android.content.Context
+import android.media.SoundPool
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +21,8 @@ import com.example.twitterpresidents.model.PresidentialCandidate
 import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 import kotlinx.android.synthetic.main.candidate_choice.view.*
 
-class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>, val context: Context) : RecyclerView.Adapter<CandidateChoiceListAdapter.ViewHolder>() {
+class CandidateChoiceListAdapter(private val data : MutableList<PresidentialCandidate>, private val context: Context, private val correctSound : Int,
+    private val wrongSound : Int) : RecyclerView.Adapter<CandidateChoiceListAdapter.ViewHolder>() {
 
     class ViewHolder(val view : View) : RecyclerView.ViewHolder(view) {
         val portrait : ImageView = view.candidate_portrait
@@ -46,15 +48,16 @@ class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>, 
         holder.view.setOnClickListener {
             if(position == GameplayScreen.correctAnswer){
                 //play sound that signifies its the right answer, update progress bar
-                GameplayScreen.soundPool?.play(R.raw.correct_sound, 1f, 1f, 0, 0, 1f)
+
+                GameplayScreen.soundPool.play(correctSound, 1f, 1f, 0, 0, 1f)
 
                 val progressBar = (context as FragmentActivity).supportFragmentManager.findFragmentById(R.id.progress_bar) as Progressbar
                 progressBar.extendProgressbar()
 
                 val toolbar = (context as FragmentActivity)
                         .supportFragmentManager.findFragmentById(R.id.tweet_options_bar) as TweetOptionsBar
-                //val lifeBar = toolbar.childFragmentManager.findFragmentById(R.id.life_bar) as Lifebar
-                //lifeBar.reduceLife()
+                val lifeBar = toolbar.childFragmentManager.findFragmentById(R.id.life_bar) as Lifebar
+                lifeBar.reduceLife()
 
                 GameplayScreen.isMultiplayer?.let{
                     if(it){
@@ -66,15 +69,15 @@ class CandidateChoiceListAdapter(val data : MutableList<PresidentialCandidate>, 
                 }
             } else{
                 //play sound signifying wrong answer
-                GameplayScreen.soundPool?.play(R.raw.wrong_sound, 1f, 1f, 0, 0, 1f)
+                GameplayScreen.soundPool.play(wrongSound, 1f, 1f, 0, 0, 1f)
 
                 val progressBar = (context as FragmentActivity).supportFragmentManager.findFragmentById(R.id.progress_bar) as Progressbar
                 progressBar.extendProgressbar()
 
                 val toolbar = (context as FragmentActivity)
                         .supportFragmentManager.findFragmentById(R.id.tweet_options_bar) as TweetOptionsBar
-                //val lifeBar = toolbar.childFragmentManager.findFragmentById(R.id.life_bar) as Lifebar
-                //lifeBar.reduceLife()
+                val lifeBar = toolbar.childFragmentManager.findFragmentById(R.id.life_bar) as Lifebar
+                lifeBar.reduceLife()
 
                 GameplayScreen.isMultiplayer?.let{
                     if(it){

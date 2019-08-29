@@ -13,10 +13,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.twitterpresidents.R
 import com.example.twitterpresidents.adapter.CandidateChoiceListAdapter
-import com.example.twitterpresidents.fragments.GameOverScreen
-import com.example.twitterpresidents.fragments.Lifebar
-import com.example.twitterpresidents.fragments.MultiplayerFragment
-import com.example.twitterpresidents.fragments.Progressbar
+import com.example.twitterpresidents.fragments.*
 import com.example.twitterpresidents.model.PresidentialCandidate
 import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 
@@ -35,9 +32,12 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         get(){
             return (0..3).random()
         }
-        var correctSound : Int? = null
-        var wrongSound : Int? = null
-        var soundPool : SoundPool? = null
+
+        var aiResponse : Int = -1
+        get(){
+            return (0..3).random()
+        }
+        lateinit var soundPool : SoundPool
         var isMultiplayer : Boolean? = null
     }
 
@@ -56,8 +56,25 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
             }
         }
 
+        //setup sound effects for right or wrong answers
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            val audioAttributes = AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build()
+
+            soundPool = SoundPool.Builder()
+                    .setMaxStreams(6)
+                    .setAudioAttributes(audioAttributes)
+                    .build()
+        } else{
+            soundPool = SoundPool(6, AudioManager.STREAM_MUSIC, 0)
+        }
+
         //setup recyclerview of candidates
-        candidateListAdapter = CandidateChoiceListAdapter(presidentialList, this)
+        candidateListAdapter = CandidateChoiceListAdapter(presidentialList, this, soundPool.load(this, R.raw.correct_sound, 1),
+        soundPool.load(this, R.raw.wrong_sound, 1))
+
         candidate_choices.setHasFixedSize(true)
         candidate_choices.adapter = candidateListAdapter
         val manager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -68,33 +85,18 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         presidentialList.add(PresidentialCandidate(R.drawable.question_mark_outline, "Kamala Harris", "@kamalaharris"))
         candidateListAdapter.notifyDataSetChanged()
 
-        //setup sound effects for right or wrong answers
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            val audioAttributes = AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
-                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                .build()
-
-            soundPool = SoundPool.Builder()
-                .setMaxStreams(6)
-                .setAudioAttributes(audioAttributes)
-                .build()
-        } else{
-            soundPool = SoundPool(6, AudioManager.STREAM_MUSIC, 0)
-        }
-
-        correctSound = soundPool?.load(this, R.raw.correct_sound, 1)
-        wrongSound = soundPool?.load(this, R.raw.wrong_sound, 1)
     }
 
     override fun noMoreLives() {
         Log.i("WEWLKJE0", "KJWHE")
         val fragment = GameOverScreen()
-        val fragManager = this.supportFragmentManager
+        val fragmentActivity = this as FragmentActivity
+        val fragManager = fragmentActivity.supportFragmentManager
         fragment.show(fragManager, "frag_k")
     }
 
     override fun progressbarMaximized() {
+        //go to victory screen
         val intent = Intent(this, ModeSelection::class.java)
         startActivity(intent)
     }
