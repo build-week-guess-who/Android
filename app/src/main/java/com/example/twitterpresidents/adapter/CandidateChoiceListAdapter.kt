@@ -25,16 +25,24 @@ import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 import kotlinx.android.synthetic.main.candidate_choice.view.*
 import android.util.DisplayMetrics
 import android.content.res.Resources
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.twitterpresidents.util.Utils
 
 
 class CandidateChoiceListAdapter(private val data : MutableList<PresidentialCandidate>, private val context: Context, private val correctSound : Int,
     private val wrongSound : Int) : RecyclerView.Adapter<CandidateChoiceListAdapter.ViewHolder>() {
 
+    var listener: OnViewClickedListener? = (context as OnViewClickedListener)
+
     class ViewHolder(val view : View) : RecyclerView.ViewHolder(view) {
         val portrait : ImageView = view.candidate_portrait
         val name : TextView = view.candidate_name
         val twitter_handle : TextView = view.candidate_handle
+    }
+
+    interface OnViewClickedListener {
+        fun changeCandidateViewsAndDisplay()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -81,7 +89,6 @@ class CandidateChoiceListAdapter(private val data : MutableList<PresidentialCand
                 lifeBar.reduceLife()
 
             }
-            //play transition to the next screen
 
             GameplayScreen.isMultiplayer?.let {
                 if (it) {
@@ -91,13 +98,15 @@ class CandidateChoiceListAdapter(private val data : MutableList<PresidentialCand
                     if(GameplayScreen.aiResponse == correctAnswer) {
                         val playerTwoProgressBar = multiplayerProgressUi.childFragmentManager.findFragmentById(R.id.player_two_progressbar) as Progressbar
                         playerTwoProgressBar.extendProgressbar()
+                        Toast.makeText(context, "Player 2 got it right!", Toast.LENGTH_SHORT).show()
                     } else{ //decrement life bar
                         val playerTwoLifebar = multiplayerProgressUi.childFragmentManager.findFragmentById(R.id.player_two_lifebar) as Lifebar
                         playerTwoLifebar.reduceLife()
+                        Toast.makeText(context, "Player 2 got it wrong!", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
-
+            listener?.changeCandidateViewsAndDisplay()
         }
     }
 
