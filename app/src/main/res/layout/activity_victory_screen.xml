@@ -4,19 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.VictoryScreen">
+    tools:context=".activity.VictoryScreen"
+    android:background ="@drawable/you_win_animated">
 
     <ImageView
-        android:id="@+id/animated_image"
-        android:src="@drawable/you_win_animated"
-        android:layout_width="wrap_content"
-        android:paddingEnd="16dp"
-        android:paddingStart="16dp"
-        android:layout_height="0dp"
+        android:id="@+id/victory_image"
+        android:layout_width="348dp"
+        android:layout_height="284dp"
         android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:contentDescription='@string/you_win_static_display'
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:src="@drawable/you_win_static"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/play_again_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="68dp"
+        android:background="@drawable/button_with_border"
+        android:text="Play again"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/quit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="68dp"
+        android:background="@drawable/button_with_border"
+        android:text="Quit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
