@@ -25,4 +25,9 @@ class ModeSelection : AppCompatActivity() {
         }
         startActivity(intent)
     }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, ModeSelection::class.java)
+        startActivity(intent)
+    }
 }

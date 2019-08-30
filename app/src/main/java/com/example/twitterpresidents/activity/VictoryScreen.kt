@@ -9,11 +9,7 @@ import android.os.Bundle
 import com.example.twitterpresidents.R
 import kotlinx.android.synthetic.main.activity_victory_screen.*
 
-//import kotlinx.android.synthetic.main.activity_victory_screen.*
-
-
 class VictoryScreen : AppCompatActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,10 +21,10 @@ class VictoryScreen : AppCompatActivity() {
         }
 
         quit_button.setOnClickListener{
-
-                finish();
-                System.exit(0)
-
+            val homeIntent = Intent(Intent.ACTION_MAIN)
+            homeIntent.addCategory(Intent.CATEGORY_HOME)
+            homeIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(homeIntent)
         }
     }
 }

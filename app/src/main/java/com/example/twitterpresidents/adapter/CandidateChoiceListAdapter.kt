@@ -97,6 +97,7 @@ class CandidateChoiceListAdapter(private val data : MutableList<PresidentialCand
                     }
                 }
             }
+
         }
     }
 

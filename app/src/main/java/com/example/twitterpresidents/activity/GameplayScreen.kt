@@ -32,18 +32,14 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
     private val MAX_LEVEL = 3
 
     companion object {
-        var correctAnswer : Int = -1 //randomly generates which selection is correct.
-        get(){
-            val guess = (0..2).random()
-            Log.i("GUESS: ", "${guess}")
-            return guess
-        }
 
-        var aiResponse : Int = -1 //the AI's guess
+        var aiResponse : Int//the AI's guess
         get(){
             return (0..2).random()
         }
-
+        set(num){
+        }
+        var correctAnswer : Int = -1 //randomly generates which selection is correct.
         lateinit var soundPool : SoundPool
         lateinit var presCandidates : PresidentialCandidatesData
         var isMultiplayer : Boolean? = null
@@ -85,7 +81,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
                 soundPool.load(this, R.raw.wrong_sound, 1))
 
         presCandidates = PresidentialCandidatesData()
-        chooseCandidateSelection(chooseRandomCandidate())
+        correctAnswer = chooseCandidateSelection(chooseRandomCandidate())
 
         candidate_choices.setHasFixedSize(true)
         candidate_choices.adapter = candidateListAdapter
@@ -136,9 +132,9 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         return candidateChoice
     }
 
-    //given that one of the displays has to be the correct candidate, choose 2 other random candidates to portray
+    //given that one of the displays has to be the correct candidate, choose 2 other random candidates to portray, returns the index of the correct answer
 
-    private fun chooseCandidateSelection(chosenCorrectAnswer : PresidentialCandidate) {
+    private fun chooseCandidateSelection(chosenCorrectAnswer : PresidentialCandidate) : Int {
         //delete everything in candidate selection list
         candidateSelectionList.clear()
 
@@ -160,5 +156,10 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
 
         allCandidates.add(chosenCorrectAnswer) //readd candidates after selecting them
         allCandidates.add(pres2)
+
+        //needs to shuffle the list
+        candidateSelectionList.shuffle()
+
+        return candidateSelectionList.indexOf(chosenCorrectAnswer)
     }
 }
