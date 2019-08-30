@@ -12,14 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9da0f41d-678e-43aa-8e68-c98ee697ae2a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/util/Util.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/GameplayScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/GameplayScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/adapter/CandidateChoiceListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/adapter/CandidateChoiceListAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/fragments/GameOverScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/fragments/GameOverScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_gameplay_screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_gameplay_screen.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/candidate_choice.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/candidate_choice.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_game_over_screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_game_over_screen.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,11 +39,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/GameplayScreen.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+            <state relative-caret-position="247">
+              <caret line="96" column="5" lean-forward="true" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -64,16 +58,26 @@
           <provider editor-type-id="android-designer2" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/adapter/CandidateChoiceListAdapter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="53" column="24" lean-forward="true" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+            <state relative-caret-position="366">
+              <caret line="98" column="29" lean-forward="true" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
               <folding>
                 <element signature="e#47#1197#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_tweet_display.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -134,16 +138,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_tweet_options_bar.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/util/PresidentialCandidatesData.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -168,6 +162,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>presidentialCandidates</find>
+      <find>xde</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,7 +182,6 @@
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_tweet_options_bar.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/fragments/TweetOptionsBar.kt" />
         <option value="$PROJECT_DIR$/src/main/res/layout/sign_up_screen.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_tweet_display.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_mode_selection.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/fragments/MultiplayerFragment.kt" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/ModeSelection.kt" />
@@ -211,10 +205,11 @@
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_gameplay_screen.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_game_over_screen.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/fragments/GameOverScreen.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/GameplayScreen.kt" />
         <option value="$PROJECT_DIR$/src/main/res/layout/candidate_choice.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/util/Util.kt" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/adapter/CandidateChoiceListAdapter.kt" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_tweet_display.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/GameplayScreen.kt" />
       </list>
     </option>
   </component>
@@ -598,7 +593,21 @@
       <option name="project" value="LOCAL" />
       <updated>1567092777478</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Fixed multiplayer spacing">
+      <created>1567099214578</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1567099214578</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Fixed multiplayer spacing">
+      <created>1567099888680</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1567099888764</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -606,7 +615,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18053691" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17785235" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -641,7 +650,8 @@
     <MESSAGE value="Merge branches 'gcgbranch' and 'new_master' of https://github.com/build-week-guess-who/Android into gcgbranch&#10;&#10;# Conflicts:&#10;#&#9;app/src/main/java/com/example/twitterpresidents/fragments/Progressbar.kt" />
     <MESSAGE value="fixed sound effects" />
     <MESSAGE value="Added simple data harvesting utility class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added simple data harvesting utility class." />
+    <MESSAGE value="Fixed multiplayer spacing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed multiplayer spacing" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -685,14 +695,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../build.gradle">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_tweet_display.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/drawable/mutliplayer.png">
       <provider selected="true" editor-type-id="images" />
@@ -917,13 +919,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/GameplayScreen.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_gameplay_screen.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
@@ -960,11 +955,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/adapter/CandidateChoiceListAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="53" column="24" lean-forward="true" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+        <state relative-caret-position="366">
+          <caret line="98" column="29" lean-forward="true" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
           <folding>
             <element signature="e#47#1197#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_tweet_display.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/twitterpresidents/activity/GameplayScreen.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="96" column="5" lean-forward="true" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
         </state>
       </provider>
     </entry>

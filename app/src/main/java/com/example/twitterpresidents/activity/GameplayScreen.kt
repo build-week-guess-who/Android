@@ -14,8 +14,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.twitterpresidents.R
 import com.example.twitterpresidents.adapter.CandidateChoiceListAdapter
 import com.example.twitterpresidents.fragments.*
+import com.example.twitterpresidents.model.PresidentialCandidate
 import com.example.twitterpresidents.util.PresidentialCandidatesData
 import kotlinx.android.synthetic.main.activity_gameplay_screen.*
+import java.util.*
 
 //user selects who made the tweet.
 //composed of top portion which includes a lot of ui elements and the tweet in a custom view
@@ -103,5 +105,10 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
     override fun onBackPressed() {
 //        val end_game_btn = (tweet_options_bar.childFragmentManager.findFragmentById(R.id.end_game)) as Button?
 //        end_game_btn?.performClick()
+    }
+
+    //1. chooses a random presidential candidate to create tweets
+    fun chooseElementsWithoutRepetition(list : MutableList<Objects>, numElements: Int){
+
     }
 }
