@@ -81,7 +81,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
                 soundPool.load(this, R.raw.wrong_sound, 1))
 
         presCandidates = PresidentialCandidatesData()
-        correctAnswer = chooseCandidateSelection(chooseRandomCandidate())
+        changeCandidateViewsAndDisplay()
 
         candidate_choices.setHasFixedSize(true)
         candidate_choices.adapter = candidateListAdapter
