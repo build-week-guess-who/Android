@@ -3,7 +3,6 @@ package com.example.twitterpresidents.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import com.example.twitterpresidents.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,7 +18,7 @@ class LaunchPage : AppCompatActivity(){
         }
 
         about_us_button.setOnClickListener{
-            val intent = Intent(this, openCreatorView::class.java)
+            val intent = Intent(this, OpenCreatorView::class.java)
             startActivity(intent)
         }
 
