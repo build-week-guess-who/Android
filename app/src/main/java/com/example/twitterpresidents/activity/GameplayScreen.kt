@@ -26,10 +26,10 @@ import java.util.*
 
 class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListener, Progressbar.OnFragmentInteractionListener {
 
-//    val presidentialList = mutableListOf<PresidentialCandidate>()
     lateinit var candidateListAdapter : CandidateChoiceListAdapter
     var candidateSelectionList = mutableListOf<PresidentialCandidate>() // list of 3 candidates shown for each tweet in the multiplayer screen
     lateinit var playerProgressFragment : MultiplayerFragment
+    private val MAX_LEVEL = 3
 
     companion object {
         var correctAnswer : Int = -1 //randomly generates which selection is correct.
