@@ -28,7 +28,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
 
 //    val presidentialList = mutableListOf<PresidentialCandidate>()
     lateinit var candidateListAdapter : CandidateChoiceListAdapter
-    lateinit var candidateSelectionList : MutableList<PresidentialCandidate>
+    lateinit var candidateSelectionList : MutableList<PresidentialCandidate> // list of 3 candidates shown for each tweet in the multiplayer screen
     lateinit var playerProgressFragment : MultiplayerFragment
 
     companion object {
@@ -82,8 +82,9 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         //setup recyclerview of candidates
 
         presCandidates = PresidentialCandidatesData()
+        chooseCandidateSelection(chooseRandomCandidate())
 
-        candidateListAdapter = CandidateChoiceListAdapter(presCandidates.presidentialCandidates,
+        candidateListAdapter = CandidateChoiceListAdapter(candidateSelectionList,
                 this, soundPool.load(this, R.raw.correct_sound, 1),
                 soundPool.load(this, R.raw.wrong_sound, 1))
 
@@ -126,6 +127,10 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
             (fragment?.view?.findViewById(R.id.tweet) as TextView).text = tweet
 
             it.removeAt(selection) //removes tweet from database of tweets
+
+            if(it.isEmpty()){ //if there are no more tweets for a certain candidate, remove them from the pool
+                presCandidates.presidentialCandidates.remove(candidateChoice)
+            }
         }
 
         return candidateChoice
@@ -134,6 +139,9 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
     //given that one of the displays has to be the correct candidate, choose 2 other random candidates to portray
 
     private fun chooseCandidateSelection(chosenCorrectAnswer : PresidentialCandidate) {
+        //delete everything in candidate selection list
+        candidateSelectionList.clear()
+
         candidateSelectionList.add(chosenCorrectAnswer)
 
         //choose 2 other random presidential candidates from the list
@@ -147,6 +155,8 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
 
         val selection2 = (0..allCandidates.size-1).random()
         candidateSelectionList.add(allCandidates[selection2])
+
+        candidateListAdapter.notifyDataSetChanged()
 
         allCandidates.add(chosenCorrectAnswer) //readd candidates after selecting them
         allCandidates.add(pres2)
