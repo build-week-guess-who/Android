@@ -18,6 +18,10 @@ class LaunchPage : AppCompatActivity(){
             System.exit(0)
         }
 
+        about_us_button.setOnClickListener{
+            val intent = Intent(this, openCreatorView::class.java)
+            startActivity(intent)
+        }
 
     }
 
