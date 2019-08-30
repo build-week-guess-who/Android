@@ -24,7 +24,7 @@ private const val NUM_LIVES = 3
 
 class Lifebar : Fragment() {
 
-    var currentLives = 3 //gets reduced when lives we get wrong answer
+    private var currentLives = 3 //gets reduced when lives we get wrong answer
     var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,7 +59,7 @@ class Lifebar : Fragment() {
         }
     }
 
-    fun playHeartAnimation(img_view: ImageView){
+    private fun playHeartAnimation(img_view: ImageView){
         val avd = ContextCompat.getDrawable(activity as Context, R.drawable.heart_losing_life)
         img_view.setImageDrawable(avd)
         (avd as Animatable).start()

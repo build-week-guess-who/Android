@@ -43,6 +43,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         }
 
         lateinit var soundPool : SoundPool
+        lateinit var presCandidates : PresidentialCandidatesData
         var isMultiplayer : Boolean? = null
     }
 
@@ -77,7 +78,8 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         }
 
         //setup recyclerview of candidates
-        val presCandidates = PresidentialCandidatesData()
+        presCandidates = PresidentialCandidatesData()
+
         candidateListAdapter = CandidateChoiceListAdapter(presCandidates.presidentialCandidates,
                 this, soundPool.load(this, R.raw.correct_sound, 1),
                 soundPool.load(this, R.raw.wrong_sound, 1))
@@ -89,7 +91,6 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
     }
 
     override fun noMoreLives() {
-        Log.i("WEWLKJE0", "KJWHE")
         val gameOverFragment = GameOverScreen()
         val fragmentActivity = this as FragmentActivity
         val fragManager = fragmentActivity.supportFragmentManager
@@ -107,8 +108,8 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
 //        end_game_btn?.performClick()
     }
 
-    //1. chooses a random presidential candidate to create tweets
-    fun chooseElementsWithoutRepetition(list : MutableList<Objects>, numElements: Int){
-
+    //chooses a random presidential candidate to create tweets
+    fun chooseRandomCandidate(){
+//        (0..)
     }
 }

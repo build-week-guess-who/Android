@@ -61,49 +61,42 @@ class CandidateChoiceListAdapter(private val data : MutableList<PresidentialCand
 
         //determine if the choice is the correct one.
         holder.view.setOnClickListener {
-            if(position == GameplayScreen.correctAnswer){
-                //play sound that signifies its the right answer, update progress bar
+            val correctAnswer = GameplayScreen.correctAnswer
 
+            if(position ==  correctAnswer){
+                //play sound that signifies its the right answer, update progress bar
                 GameplayScreen.soundPool.play(correctSound, 1f, 1f, 0, 0, 1f)
 
                 val progressBar = (context as FragmentActivity).supportFragmentManager.findFragmentById(R.id.progress_bar) as Progressbar
                 progressBar.extendProgressbar()
-
-                val toolbar = (context as FragmentActivity)
-                        .supportFragmentManager.findFragmentById(R.id.tweet_options_bar) as TweetOptionsBar
-                val lifeBar = toolbar.childFragmentManager.findFragmentById(R.id.life_bar) as Lifebar
-                lifeBar.reduceLife()
-
-                GameplayScreen.isMultiplayer?.let{
-                    if(it){
-                        val multiplayerProgressUi = (context as FragmentActivity)
-                                .supportFragmentManager.findFragmentById(R.id.container_for_fragments) as MultiplayerFragment
-                        val playerTwoProgressBar = multiplayerProgressUi.childFragmentManager.findFragmentById(R.id.player_two_progressbar) as Progressbar
-                        playerTwoProgressBar.extendProgressbar()
-                    }
-                }
-            } else{
+            }
+            else{
                 //play sound signifying wrong answer
                 GameplayScreen.soundPool.play(wrongSound, 1f, 1f, 0, 0, 1f)
 
-                val progressBar = (context as FragmentActivity).supportFragmentManager.findFragmentById(R.id.progress_bar) as Progressbar
-                progressBar.extendProgressbar()
-
+                //reduce heart bar for player one
                 val toolbar = (context as FragmentActivity)
                         .supportFragmentManager.findFragmentById(R.id.tweet_options_bar) as TweetOptionsBar
                 val lifeBar = toolbar.childFragmentManager.findFragmentById(R.id.life_bar) as Lifebar
                 lifeBar.reduceLife()
 
-                GameplayScreen.isMultiplayer?.let{
-                    if(it){
-                        val multiplayerProgressUi = (context as FragmentActivity)
-                                .supportFragmentManager.findFragmentById(R.id.container_for_fragments) as MultiplayerFragment
+            }
+            //play transition to the next screen
+
+            GameplayScreen.isMultiplayer?.let {
+                if (it) {
+                    val multiplayerProgressUi = (context as FragmentActivity)
+                        .supportFragmentManager.findFragmentById(R.id.container_for_fragments) as MultiplayerFragment
+
+                    if(GameplayScreen.aiResponse == correctAnswer) {
                         val playerTwoProgressBar = multiplayerProgressUi.childFragmentManager.findFragmentById(R.id.player_two_progressbar) as Progressbar
                         playerTwoProgressBar.extendProgressbar()
+                    } else{ //decrement life bar
+                        val playerTwoLifebar = multiplayerProgressUi.childFragmentManager.findFragmentById(R.id.player_two_lifebar) as Lifebar
+                        playerTwoLifebar.reduceLife()
                     }
                 }
             }
-            //play transition to the next screen
         }
     }
 
