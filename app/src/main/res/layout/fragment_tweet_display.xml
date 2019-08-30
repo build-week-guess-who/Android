@@ -27,10 +27,10 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="@string/filler_text"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/level_indicator"
         app:layout_constraintEnd_toEndOf="@+id/level_indicator"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="@+id/twitter_bird"
         app:layout_constraintTop_toTopOf="@+id/yellow_rect"
         app:layout_constraintVertical_bias="0.256" />
@@ -42,6 +42,7 @@
         android:background="@drawable/button_with_border"
         android:text="@string/level_1"
         android:enabled="false"
+        android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.574"
@@ -56,9 +57,9 @@
         android:src="@drawable/twitter_bird"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.811" />
+        app:layout_constraintVertical_bias="0.849" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,10 +26,10 @@ import java.util.*
 
 class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListener, Progressbar.OnFragmentInteractionListener {
 
-//    val presidentialList = mutableListOf<PresidentialCandidate>()
     lateinit var candidateListAdapter : CandidateChoiceListAdapter
-    lateinit var candidateSelectionList : MutableList<PresidentialCandidate> // list of 3 candidates shown for each tweet in the multiplayer screen
+    var candidateSelectionList = mutableListOf<PresidentialCandidate>() // list of 3 candidates shown for each tweet in the multiplayer screen
     lateinit var playerProgressFragment : MultiplayerFragment
+    private val MAX_LEVEL = 3
 
     companion object {
         var correctAnswer : Int = -1 //randomly generates which selection is correct.
@@ -80,13 +80,12 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         }
 
         //setup recyclerview of candidates
-
-        presCandidates = PresidentialCandidatesData()
-        chooseCandidateSelection(chooseRandomCandidate())
-
         candidateListAdapter = CandidateChoiceListAdapter(candidateSelectionList,
                 this, soundPool.load(this, R.raw.correct_sound, 1),
                 soundPool.load(this, R.raw.wrong_sound, 1))
+
+        presCandidates = PresidentialCandidatesData()
+        chooseCandidateSelection(chooseRandomCandidate())
 
         candidate_choices.setHasFixedSize(true)
         candidate_choices.adapter = candidateListAdapter
@@ -96,6 +95,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
 
     override fun noMoreLives() {
         val gameOverFragment = GameOverScreen()
+        gameOverFragment.isCancelable = false
         val fragmentActivity = this as FragmentActivity
         val fragManager = fragmentActivity.supportFragmentManager
         gameOverFragment.show(fragManager, "frag_k")
