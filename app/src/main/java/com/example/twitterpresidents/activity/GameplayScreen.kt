@@ -111,7 +111,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
     }
 
     //chooses a random presidential candidate to create tweets, sets tweet in display, returns that presidential candidate
-    fun chooseRandomCandidate() : PresidentialCandidate {
+    private fun chooseRandomCandidate() : PresidentialCandidate {
         val candChoice = (0..presCandidates.candidateTweets.size-1).random()
         val candidateChoice : PresidentialCandidate = presCandidates.presidentialCandidates[candChoice]
         val listOfTweets : MutableList<String>? = presCandidates.candidateTweets[candidateChoice]
@@ -131,10 +131,19 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
     }
 
     //given that one of the displays has to be the correct candidate
-    fun chooseCandidateSelection(chosenCorrectAnswer : PresidentialCandidate) {
+    private fun chooseCandidateSelection(chosenCorrectAnswer : PresidentialCandidate) {
         candidateSelectionList.add(chosenCorrectAnswer)
 
         //choose 2 other random presidential candidates from the list
-        
+        val allCandidates = presCandidates.presidentialCandidates
+        allCandidates.remove(chosenCorrectAnswer) //add this back after we choose 2 other random presidential candidates
+
+        val selection1 = (0..allCandidates.size-1).random()
+
+        candidateSelectionList.add(allCandidates[selection1])
+        allCandidates.removeAt(selection1)
+
+        val selection2 = (0..allCandidates.size-1).random()
+        candidateSelectionList.add(allCandidates[selection2])
     }
 }
