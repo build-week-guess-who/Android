@@ -8,6 +8,7 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,6 +28,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
 
 //    val presidentialList = mutableListOf<PresidentialCandidate>()
     lateinit var candidateListAdapter : CandidateChoiceListAdapter
+    lateinit var candidateSelectionList : MutableList<PresidentialCandidate>
     lateinit var playerProgressFragment : MultiplayerFragment
 
     companion object {
@@ -99,7 +101,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
 
     override fun progressbarMaximized() {
         //go to victory screen
-        val intent = Intent(this, ModeSelection::class.java)
+        val intent = Intent(this, VictoryScreen::class.java)
         startActivity(intent)
     }
 
@@ -108,8 +110,31 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
 //        end_game_btn?.performClick()
     }
 
-    //chooses a random presidential candidate to create tweets
-    fun chooseRandomCandidate(){
-//        (0..)
+    //chooses a random presidential candidate to create tweets, sets tweet in display, returns that presidential candidate
+    fun chooseRandomCandidate() : PresidentialCandidate {
+        val candChoice = (0..presCandidates.candidateTweets.size-1).random()
+        val candidateChoice : PresidentialCandidate = presCandidates.presidentialCandidates[candChoice]
+        val listOfTweets : MutableList<String>? = presCandidates.candidateTweets[candidateChoice]
+
+        listOfTweets?.let{
+            val size : Int = it.size
+            val selection : Int = (0..size-1).random()
+
+            val tweet : String = it[selection]
+            val fragment = supportFragmentManager.findFragmentById(R.id.tweet_display)
+            (fragment?.view?.findViewById(R.id.tweet) as TextView).text = tweet
+
+            it.removeAt(selection) //removes tweet from database of tweets
+        }
+
+        return candidateChoice
+    }
+
+    //given that one of the displays has to be the correct candidate
+    fun chooseCandidateSelection(chosenCorrectAnswer : PresidentialCandidate) {
+        candidateSelectionList.add(chosenCorrectAnswer)
+
+        //choose 2 other random presidential candidates from the list
+        
     }
 }
