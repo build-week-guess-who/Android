@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.VictoryScreen"></activity>
+        <activity android:name=".activity.openCreatorView"></activity>
+        <activity android:name=".activity.CreatorView" />
+        <activity android:name=".activity.VictoryScreen" />
         <activity android:name=".activity.GameplayScreen" />
         <activity android:name=".activity.InstructionsScreen" />
         <activity android:name=".activity.ModeSelection" />
