@@ -80,6 +80,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         }
 
         //setup recyclerview of candidates
+
         presCandidates = PresidentialCandidatesData()
 
         candidateListAdapter = CandidateChoiceListAdapter(presCandidates.presidentialCandidates,
@@ -130,7 +131,8 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         return candidateChoice
     }
 
-    //given that one of the displays has to be the correct candidate
+    //given that one of the displays has to be the correct candidate, choose 2 other random candidates to portray
+
     private fun chooseCandidateSelection(chosenCorrectAnswer : PresidentialCandidate) {
         candidateSelectionList.add(chosenCorrectAnswer)
 
@@ -139,11 +141,14 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         allCandidates.remove(chosenCorrectAnswer) //add this back after we choose 2 other random presidential candidates
 
         val selection1 = (0..allCandidates.size-1).random()
-
+        val pres2 = allCandidates[selection1]
         candidateSelectionList.add(allCandidates[selection1])
         allCandidates.removeAt(selection1)
 
         val selection2 = (0..allCandidates.size-1).random()
         candidateSelectionList.add(allCandidates[selection2])
+
+        allCandidates.add(chosenCorrectAnswer) //readd candidates after selecting them
+        allCandidates.add(pres2)
     }
 }
