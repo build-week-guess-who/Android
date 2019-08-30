@@ -49,7 +49,6 @@ class Progressbar : Fragment() {
         if(progressBar.progress == 5){
             listener?.progressbarMaximized()
         }
-        Log.i("Progresssfdas ", "$progressBar.progress")
     }
 
     override fun onAttach(context: Context) {

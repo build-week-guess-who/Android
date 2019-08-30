@@ -49,7 +49,7 @@ class PresidentialCandidatesData {
         val yangTweets = mutableListOf<String>()
         yangTweets.add("You know what would be a great idea - a global climate change mitigation force. Countries would contribute according to their GDP.  There are a lot of issues out there in places that don’t fall neatly in any one country’s territory.")
         yangTweets.add("Technically there is no official dress code for the debates.")
-        yangTweets.add("Quantum computers may make our current encryption standards ineffective and obsolete. We should invest in new ones that will work even as new technologies are developed. You know what would help make Americans healthier?  Better food and nutrition.  This would be a path to better health outcomes as much as improvements to our health care system.")
+        yangTweets.add("Quantum computers may make our current encryption standards ineffective and obsolete. We should invest in new ones that will work even as new technologies are developed. You know what would help make Americans healthier?  Better food and nutrition.")
         yangTweets.add("Bernie ignores the facts that money in our hands would 1) create hundreds of thousands of local jobs and 2) recognize and reward the nurturing work being done in our homes and communities every day.  He also assumes that everyone wants to work for the government which isn’t true.")
 
         tweetCandidateMap.put(presidentialCandidates[2], yangTweets)

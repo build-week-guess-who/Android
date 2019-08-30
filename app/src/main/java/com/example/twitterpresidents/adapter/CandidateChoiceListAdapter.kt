@@ -1,5 +1,7 @@
 package com.example.twitterpresidents.adapter
 
+import android.animation.AnimatorInflater
+import android.animation.ObjectAnimator
 import android.app.Activity
 import android.content.Context
 import android.media.SoundPool
@@ -25,16 +27,37 @@ import kotlinx.android.synthetic.main.activity_gameplay_screen.*
 import kotlinx.android.synthetic.main.candidate_choice.view.*
 import android.util.DisplayMetrics
 import android.content.res.Resources
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.twitterpresidents.util.Utils
 
 
 class CandidateChoiceListAdapter(private val data : MutableList<PresidentialCandidate>, private val context: Context, private val correctSound : Int,
     private val wrongSound : Int) : RecyclerView.Adapter<CandidateChoiceListAdapter.ViewHolder>() {
 
+    var listener: OnViewClickedListener? = (context as OnViewClickedListener)
+
     class ViewHolder(val view : View) : RecyclerView.ViewHolder(view) {
+        val card : CardView = view.candidate_card
         val portrait : ImageView = view.candidate_portrait
         val name : TextView = view.candidate_name
         val twitter_handle : TextView = view.candidate_handle
+    }
+
+    interface OnViewClickedListener {
+        fun changeCandidateViewsAndDisplay()
+    }
+
+    private fun setExitAnimation(viewToAnimate : View){
+        val animation : Animation = AnimationUtils.loadAnimation(viewToAnimate.context, android.R.anim.fade_out)
+        viewToAnimate.startAnimation(animation)
+    }
+
+    private fun setEnterAnimation(viewToAnimate : View){
+        val animation : Animation = AnimationUtils.loadAnimation(viewToAnimate.context, android.R.anim.fade_in)
+        viewToAnimate.startAnimation(animation)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -58,7 +81,7 @@ class CandidateChoiceListAdapter(private val data : MutableList<PresidentialCand
         holder.portrait.setImageDrawable(ContextCompat.getDrawable(holder.view.context, data[position].portraitId))
         holder.name.text = data[position].name
         holder.twitter_handle.text = data[position].twitterHandle
-
+        setEnterAnimation(holder.card)
         //determine if the choice is the correct one.
         holder.view.setOnClickListener {
             val correctAnswer = GameplayScreen.correctAnswer
@@ -81,7 +104,6 @@ class CandidateChoiceListAdapter(private val data : MutableList<PresidentialCand
                 lifeBar.reduceLife()
 
             }
-            //play transition to the next screen
 
             GameplayScreen.isMultiplayer?.let {
                 if (it) {
@@ -91,12 +113,16 @@ class CandidateChoiceListAdapter(private val data : MutableList<PresidentialCand
                     if(GameplayScreen.aiResponse == correctAnswer) {
                         val playerTwoProgressBar = multiplayerProgressUi.childFragmentManager.findFragmentById(R.id.player_two_progressbar) as Progressbar
                         playerTwoProgressBar.extendProgressbar()
+                        Toast.makeText(context, "Player 2 got it right!", Toast.LENGTH_SHORT).show()
                     } else{ //decrement life bar
                         val playerTwoLifebar = multiplayerProgressUi.childFragmentManager.findFragmentById(R.id.player_two_lifebar) as Lifebar
                         playerTwoLifebar.reduceLife()
+                        Toast.makeText(context, "Player 2 got it wrong!", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
+            setExitAnimation(holder.card)
+            listener?.changeCandidateViewsAndDisplay()
         }
     }
 

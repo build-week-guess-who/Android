@@ -41,7 +41,6 @@ class GameOverScreen : DialogFragment() {
         }
 
         view.continue_no.setOnClickListener {
-            Log.i("WHY", "EDSKN")
             val homeIntent = Intent(Intent.ACTION_MAIN)
             homeIntent.addCategory(Intent.CATEGORY_HOME)
             homeIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP

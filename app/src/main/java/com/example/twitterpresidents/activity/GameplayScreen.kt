@@ -24,7 +24,7 @@ import java.util.*
 //composed of top portion which includes a lot of ui elements and the tweet in a custom view
 //bottom part is the recycler view of the candidate choices.
 
-class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListener, Progressbar.OnFragmentInteractionListener {
+class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListener, Progressbar.OnFragmentInteractionListener, CandidateChoiceListAdapter.OnViewClickedListener {
 
     lateinit var candidateListAdapter : CandidateChoiceListAdapter
     var candidateSelectionList = mutableListOf<PresidentialCandidate>() // list of 3 candidates shown for each tweet in the multiplayer screen
@@ -32,18 +32,14 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
     private val MAX_LEVEL = 3
 
     companion object {
-        var correctAnswer : Int = -1 //randomly generates which selection is correct.
-        get(){
-            val guess = (0..2).random()
-            Log.i("GUESS: ", "${guess}")
-            return guess
-        }
 
-        var aiResponse : Int = -1 //the AI's guess
+        var aiResponse : Int//the AI's guess
         get(){
             return (0..2).random()
         }
-
+        set(num){
+        }
+        var correctAnswer : Int = -1 //randomly generates which selection is correct.
         lateinit var soundPool : SoundPool
         lateinit var presCandidates : PresidentialCandidatesData
         var isMultiplayer : Boolean? = null
@@ -85,7 +81,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
                 soundPool.load(this, R.raw.wrong_sound, 1))
 
         presCandidates = PresidentialCandidatesData()
-        chooseCandidateSelection(chooseRandomCandidate())
+        changeCandidateViewsAndDisplay()
 
         candidate_choices.setHasFixedSize(true)
         candidate_choices.adapter = candidateListAdapter
@@ -113,7 +109,7 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
     }
 
     //chooses a random presidential candidate to create tweets, sets tweet in display, returns that presidential candidate
-    private fun chooseRandomCandidate() : PresidentialCandidate {
+    fun chooseRandomCandidate() : PresidentialCandidate {
         val candChoice = (0..presCandidates.candidateTweets.size-1).random()
         val candidateChoice : PresidentialCandidate = presCandidates.presidentialCandidates[candChoice]
         val listOfTweets : MutableList<String>? = presCandidates.candidateTweets[candidateChoice]
@@ -136,9 +132,9 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         return candidateChoice
     }
 
-    //given that one of the displays has to be the correct candidate, choose 2 other random candidates to portray
+    //given that one of the displays has to be the correct candidate, choose 2 other random candidates to portray, returns the index of the correct answer
 
-    private fun chooseCandidateSelection(chosenCorrectAnswer : PresidentialCandidate) {
+    fun chooseCandidateSelection(chosenCorrectAnswer : PresidentialCandidate) : Int {
         //delete everything in candidate selection list
         candidateSelectionList.clear()
 
@@ -156,9 +152,17 @@ class GameplayScreen : AppCompatActivity(), Lifebar.OnFragmentInteractionListene
         val selection2 = (0..allCandidates.size-1).random()
         candidateSelectionList.add(allCandidates[selection2])
 
-        candidateListAdapter.notifyDataSetChanged()
-
         allCandidates.add(chosenCorrectAnswer) //readd candidates after selecting them
         allCandidates.add(pres2)
+
+        //needs to shuffle the list
+        candidateSelectionList.shuffle()
+        candidateListAdapter.notifyDataSetChanged()
+
+        return candidateSelectionList.indexOf(chosenCorrectAnswer)
+    }
+
+    override fun changeCandidateViewsAndDisplay() {
+        correctAnswer = chooseCandidateSelection(chooseRandomCandidate())
     }
 }
